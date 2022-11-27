@@ -1,0 +1,3386 @@
+<html lang="zh"> 
+ <head></head> 
+ <body style="text-align:center;">
+   ﻿ 
+  <title>xqxc_collector文档</title> 
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style> 
+  <div style="width:800px; margin:20px auto; text-align:left;"> <a name="index"></a> 
+   <h2 style="text-align:center; line-height:50px;">xqxc_collector文档</h2> 
+   <div> <b>数据库名：xqxc_collector</b> 
+    <br><b>文档版本：0.0.1-SNAPSHOT</b> 
+    <br><b>文档描述：xqxc_collector文档生成</b> 
+    <br> 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>表名</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td><a href="#account_sponsor_index_20220810">account_sponsor_index_20220810</a></td> 
+      <td>account_sponsor_index_20220810</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td><a href="#com_account_info_20220701_20220707">com_account_info_20220701_20220707</a></td> 
+      <td>登录账号表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td><a href="#com_account_info_20220726">com_account_info_20220726</a></td> 
+      <td>登录账号表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td><a href="#com_account_info_20220801">com_account_info_20220801</a></td> 
+      <td>登录账号表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td><a href="#settle_market_user">settle_market_user</a></td> 
+      <td>合伙人业绩主表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td><a href="#settle_market_user_item">settle_market_user_item</a></td> 
+      <td>合伙人业绩明细</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td><a href="#un_settle_market_user_item">un_settle_market_user_item</a></td> 
+      <td>合伙人业绩明细</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td><a href="#user_account_market_count_20220701_20220707">user_account_market_count_20220701_20220707</a></td> 
+      <td>user_account_market_count_20220701_20220707</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td><a href="#user_market_info">user_market_info</a></td> 
+      <td>贝小集-合作伙伴</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td><a href="#user_market_info_20220701_20220707">user_market_info_20220701_20220707</a></td> 
+      <td>贝小集-合作伙伴</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="account_sponsor_index_20220810"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：account_sponsor_index_20220810</b> 
+   </div> 
+   <div>
+     说明： 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>sponsor_index</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20480</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">推荐关系索引</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>account_open_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">开通会员时间（成为银卡的时间，普通会员为空）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>invite_register_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">邀请注册时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>remark</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">备注</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>gmt_modified</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="com_account_info_20220701_20220707"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：com_account_info_20220701_20220707</b> 
+   </div> 
+   <div>
+     说明：登录账号表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>account_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">账户名(主账号手机号或子账号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>login_pwd</td> 
+      <td align="center">varchar</td> 
+      <td align="center">50</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">登录密码</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>tel</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">手机</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>state</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">状态 （0:禁用1:启用）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>account_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">账户等级id(com_account_level 等级表的主键id)；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>level_open_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">等级开通时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>charm_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">魅力等级id(com_account_level 等级表的主键id)；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>is_anchor</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否开通主播（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>is_video</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">是否开通短视频（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>is_community</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">是否开通图文社区秀（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>is_ad</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否开通广告秀（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>avatar</td> 
+      <td align="center">varchar</td> 
+      <td align="center">200</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">头像</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>gmt_modified</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>nickname</td> 
+      <td align="center">varchar</td> 
+      <td align="center">50</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">昵称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td>login_state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">登录状态（离线 在线 隐身）；该字段目前没用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">20</td> 
+      <td>remark</td> 
+      <td align="center">varchar</td> 
+      <td align="center">500</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">备注</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">21</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">用户ID；com_user_info 用户信息(实名信息)表的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">22</td> 
+      <td>province_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">省份ID；com_area_info 地区表的主键id；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">23</td> 
+      <td>city_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">市区ID；com_area_info 地区表的主键id；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">24</td> 
+      <td>area_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">地区；com_area_info 地区表的主键id；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">25</td> 
+      <td>address</td> 
+      <td align="center">varchar</td> 
+      <td align="center">200</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">详细地址；该字段目前没用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">26</td> 
+      <td>lng</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">经度；用户登录时的位置经度</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">27</td> 
+      <td>lat</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">纬度；用户登录时的位置纬度</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">28</td> 
+      <td>is_realname_auth</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否实名认证(0否 1 是)；实名通过后会往 com_user_info 表中插入实名信息数据</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">29</td> 
+      <td>account_sponsor_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">推荐人ID；推荐会员在com_account_info_20220701_20220707表中的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">30</td> 
+      <td>agent_account_sponsor_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">黄金会员ID；推荐黄金会员在com_account_info_20220701_20220707表中的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">31</td> 
+      <td>boss_account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">老板ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">32</td> 
+      <td>source</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户来源(NATURE 自然流量; SERVICE_SPONSOR 服务商推荐; SPONSOR 会员推荐； MERCHANT 商户入驻; 空值 - 机器人或总控创建的服务商对应的会员账号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">33</td> 
+      <td>last_login_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">最后登录时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">34</td> 
+      <td>audit_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">实名认证审核时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">35</td> 
+      <td>account_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">GENERAL_MEMBER</td> 
+      <td align="center">账户类型（会员;商户;服务商） GENERAL_MEMBER 普通会员 SELLER 服务商 MAIN_ACCOUNT 企业主播主账号 MERCHANT 商户 VIRTUAL_MEMBER 虚拟会员（机器人） CHILD_ACCOUNT 企业主播子账号</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">36</td> 
+      <td>gdc_user_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">DEFAULT</td> 
+      <td align="center">GDC会员类型 DEFAULT 默认值，普通会员，与GDC无关 GDC_TO_XIUYOU 从GDC注册同步到秀友的会员 XIUYOU_TO_GDC 原秀友会员在GDC注册的会员 空值 机器人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">37</td> 
+      <td>service_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">会员归属的服务商ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">38</td> 
+      <td>service_account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">服务商会员账号ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">39</td> 
+      <td>affiliation_province_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">归属省份ID；com_area_info 地区表的主键id （服务商推荐的会员与服务商归属省份一致； 其他会员取会员登录时的定位；目前该字段没用）；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">40</td> 
+      <td>affiliation_city_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">归属城市ID；com_area_info 地区表的主键id （服务商推荐的会员与服务商归属城市一致； 其他会员取会员登录时的定位；目前该字段没用）；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">41</td> 
+      <td>affiliation_area_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">归属地区Id；com_area_info 地区表的主键id （服务商推荐的会员与服务商归属地区一致； 其他会员取会员登录时的定位；目前该字段没用）；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">42</td> 
+      <td>merchant_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">商户ID；会员关联的商户账号id，xqxc_merchant.merchant_info表的主键id；；xqxc_merchant.merchant_info；xqxc_merchant.merchant_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">43</td> 
+      <td>operations_center_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">运营中心ID；会员归属的运营中心id，公司表 xqxc_admin.com_company_info 的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">44</td> 
+      <td>area_company_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">区域公司ID；会员归属的区域公司id，公司表 xqxc_admin.com_company_info 的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">45</td> 
+      <td>first_letter</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">首字母（搜索引擎使用；会员昵称的首字母）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">46</td> 
+      <td>live_state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">直播状态： END 直播结束（回放）； LIVE 直播中； NO_VIEWING 禁播中； NONE 未开播；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">47</td> 
+      <td>live_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">直播类型，用于区分用户当前直播间的直播类型： LIVE_BORADCAS_CLASS 普通直播； BUNIESS_LIVE_BORADCAS_CLASS 商学院直播； CHARGE_LIVE_BORADCAS_CLASS 知识付费直播； 空值 未开播或历史开播数据(该字段增加前的开播数据)；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">48</td> 
+      <td>last_live_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">最后开播时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">49</td> 
+      <td>reg_ip</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">注册ip地址</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">50</td> 
+      <td>open_anchor_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">开通主播的时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">51</td> 
+      <td>is_buy_anchor</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否有购买开播资格（1是 0否）；购买开播资格后，需要实名通过认证才成为主播</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">52</td> 
+      <td>source_account</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改账号后需要保存原有的旧账号(手机号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">53</td> 
+      <td>anchor_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">GENERAL_ANCHOR</td> 
+      <td align="center">主播类型(普通主播：GENERAL_ANCHOR 商户主播MERCHANT_ANCHOR)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">54</td> 
+      <td>is_activate</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">是否激活， 1激活，0未激活； 用于标识服务商注册自动创建的会员是否为临时创建，临时创建的会员用于服务商注册的支付流程，其他说明： 1.注册的服务商在审核通过前，自动创建的会员状态默认为未激活； 2.状态为未激活的会员，登录后状态变更为激活，归属为自然流量； 3.未激活的会员不会在会员列表显示，可被其他会员或其他服务商邀请（归属关系变更） 4.注册的服务商审核通过后，自动创建的会员状态变更为激活，且该会员的归属变更为归属该服务商；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">55</td> 
+      <td>main_account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">子账号归属的企业主播主账号ID，默认0；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">56</td> 
+      <td>child_effective_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">企业主播子账号生效时间，仅用户类型为子账号有用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">57</td> 
+      <td>merchant_sponsor_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">推荐商户ID；推荐商户id在merchant_info表中的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">58</td> 
+      <td>extend_data</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">{}</td> 
+      <td align="center">扩展数据</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">59</td> 
+      <td>invite_register_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">邀请注册时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="com_account_info_20220726"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：com_account_info_20220726</b> 
+   </div> 
+   <div>
+     说明：登录账号表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>account_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">账户名(主账号手机号或子账号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>login_pwd</td> 
+      <td align="center">varchar</td> 
+      <td align="center">50</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">登录密码</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>tel</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">手机</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>state</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">状态 （0:禁用1:启用）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>account_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">账户等级id(com_account_level 等级表的主键id)；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>level_open_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">等级开通时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>charm_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">魅力等级id(com_account_level 等级表的主键id)；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>is_anchor</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否开通主播（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>is_video</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">是否开通短视频（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>is_community</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">是否开通图文社区秀（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>is_ad</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否开通广告秀（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>avatar</td> 
+      <td align="center">varchar</td> 
+      <td align="center">200</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">头像</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>gmt_modified</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>nickname</td> 
+      <td align="center">varchar</td> 
+      <td align="center">50</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">昵称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td>login_state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">登录状态（离线 在线 隐身）；该字段目前没用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">20</td> 
+      <td>remark</td> 
+      <td align="center">varchar</td> 
+      <td align="center">500</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">备注</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">21</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">用户ID；com_user_info 用户信息(实名信息)表的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">22</td> 
+      <td>province_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">省份ID；com_area_info 地区表的主键id；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">23</td> 
+      <td>city_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">市区ID；com_area_info 地区表的主键id；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">24</td> 
+      <td>area_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">地区；com_area_info 地区表的主键id；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">25</td> 
+      <td>address</td> 
+      <td align="center">varchar</td> 
+      <td align="center">200</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">详细地址；该字段目前没用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">26</td> 
+      <td>lng</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">经度；用户登录时的位置经度</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">27</td> 
+      <td>lat</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">纬度；用户登录时的位置纬度</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">28</td> 
+      <td>is_realname_auth</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否实名认证(0否 1 是)；实名通过后会往 com_user_info 表中插入实名信息数据</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">29</td> 
+      <td>account_sponsor_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">推荐人ID；推荐会员在com_account_info_20220701_20220707表中的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">30</td> 
+      <td>agent_account_sponsor_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">黄金会员ID；推荐黄金会员在com_account_info_20220701_20220707表中的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">31</td> 
+      <td>boss_account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">老板ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">32</td> 
+      <td>source</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户来源(NATURE 自然流量; SERVICE_SPONSOR 服务商推荐; SPONSOR 会员推荐； MERCHANT 商户入驻; 空值 - 机器人或总控创建的服务商对应的会员账号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">33</td> 
+      <td>last_login_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">最后登录时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">34</td> 
+      <td>audit_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">实名认证审核时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">35</td> 
+      <td>account_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">GENERAL_MEMBER</td> 
+      <td align="center">账户类型（会员;商户;服务商） GENERAL_MEMBER 普通会员 SELLER 服务商 MAIN_ACCOUNT 企业主播主账号 MERCHANT 商户 VIRTUAL_MEMBER 虚拟会员（机器人） CHILD_ACCOUNT 企业主播子账号</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">36</td> 
+      <td>gdc_user_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">DEFAULT</td> 
+      <td align="center">GDC会员类型 DEFAULT 默认值，普通会员，与GDC无关 GDC_TO_XIUYOU 从GDC注册同步到秀友的会员 XIUYOU_TO_GDC 原秀友会员在GDC注册的会员 空值 机器人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">37</td> 
+      <td>service_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">会员归属的服务商ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">38</td> 
+      <td>service_account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">服务商会员账号ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">39</td> 
+      <td>affiliation_province_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">归属省份ID；com_area_info 地区表的主键id （服务商推荐的会员与服务商归属省份一致； 其他会员取会员登录时的定位；目前该字段没用）；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">40</td> 
+      <td>affiliation_city_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">归属城市ID；com_area_info 地区表的主键id （服务商推荐的会员与服务商归属城市一致； 其他会员取会员登录时的定位；目前该字段没用）；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">41</td> 
+      <td>affiliation_area_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">归属地区Id；com_area_info 地区表的主键id （服务商推荐的会员与服务商归属地区一致； 其他会员取会员登录时的定位；目前该字段没用）；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">42</td> 
+      <td>merchant_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">商户ID；会员关联的商户账号id，xqxc_merchant.merchant_info表的主键id；；xqxc_merchant.merchant_info；xqxc_merchant.merchant_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">43</td> 
+      <td>operations_center_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">运营中心ID；会员归属的运营中心id，公司表 xqxc_admin.com_company_info 的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">44</td> 
+      <td>area_company_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">区域公司ID；会员归属的区域公司id，公司表 xqxc_admin.com_company_info 的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">45</td> 
+      <td>first_letter</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">首字母（搜索引擎使用；会员昵称的首字母）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">46</td> 
+      <td>live_state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">直播状态： END 直播结束（回放）； LIVE 直播中； NO_VIEWING 禁播中； NONE 未开播；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">47</td> 
+      <td>live_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">直播类型，用于区分用户当前直播间的直播类型： LIVE_BORADCAS_CLASS 普通直播； BUNIESS_LIVE_BORADCAS_CLASS 商学院直播； CHARGE_LIVE_BORADCAS_CLASS 知识付费直播； 空值 未开播或历史开播数据(该字段增加前的开播数据)；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">48</td> 
+      <td>last_live_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">最后开播时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">49</td> 
+      <td>reg_ip</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">注册ip地址</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">50</td> 
+      <td>open_anchor_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">开通主播的时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">51</td> 
+      <td>is_buy_anchor</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否有购买开播资格（1是 0否）；购买开播资格后，需要实名通过认证才成为主播</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">52</td> 
+      <td>source_account</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改账号后需要保存原有的旧账号(手机号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">53</td> 
+      <td>anchor_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">GENERAL_ANCHOR</td> 
+      <td align="center">主播类型(普通主播：GENERAL_ANCHOR 商户主播MERCHANT_ANCHOR)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">54</td> 
+      <td>is_activate</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">是否激活， 1激活，0未激活； 用于标识服务商注册自动创建的会员是否为临时创建，临时创建的会员用于服务商注册的支付流程，其他说明： 1.注册的服务商在审核通过前，自动创建的会员状态默认为未激活； 2.状态为未激活的会员，登录后状态变更为激活，归属为自然流量； 3.未激活的会员不会在会员列表显示，可被其他会员或其他服务商邀请（归属关系变更） 4.注册的服务商审核通过后，自动创建的会员状态变更为激活，且该会员的归属变更为归属该服务商；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">55</td> 
+      <td>main_account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">子账号归属的企业主播主账号ID，默认0；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">56</td> 
+      <td>child_effective_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">企业主播子账号生效时间，仅用户类型为子账号有用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">57</td> 
+      <td>merchant_sponsor_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">推荐商户ID；推荐商户id在merchant_info表中的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">58</td> 
+      <td>extend_data</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">{}</td> 
+      <td align="center">扩展数据</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">59</td> 
+      <td>invite_register_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">邀请注册时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="com_account_info_20220801"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：com_account_info_20220801</b> 
+   </div> 
+   <div>
+     说明：登录账号表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>account_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">账户名(主账号手机号或子账号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>login_pwd</td> 
+      <td align="center">varchar</td> 
+      <td align="center">50</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">登录密码</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>tel</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">手机</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>state</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">状态 （0:禁用1:启用）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>account_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">账户等级id(com_account_level 等级表的主键id)；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>level_open_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">等级开通时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>charm_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">魅力等级id(com_account_level 等级表的主键id)；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>is_anchor</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否开通主播（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>is_video</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">是否开通短视频（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>is_community</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">是否开通图文社区秀（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>is_ad</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否开通广告秀（0:未开通:1:开通 ）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>avatar</td> 
+      <td align="center">varchar</td> 
+      <td align="center">200</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">头像</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>gmt_modified</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>nickname</td> 
+      <td align="center">varchar</td> 
+      <td align="center">50</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">昵称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td>login_state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">登录状态（离线 在线 隐身）；该字段目前没用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">20</td> 
+      <td>remark</td> 
+      <td align="center">varchar</td> 
+      <td align="center">500</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">备注</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">21</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">用户ID；com_user_info 用户信息(实名信息)表的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">22</td> 
+      <td>province_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">省份ID；com_area_info 地区表的主键id；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">23</td> 
+      <td>city_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">市区ID；com_area_info 地区表的主键id；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">24</td> 
+      <td>area_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">地区；com_area_info 地区表的主键id；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">25</td> 
+      <td>address</td> 
+      <td align="center">varchar</td> 
+      <td align="center">200</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">详细地址；该字段目前没用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">26</td> 
+      <td>lng</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">经度；用户登录时的位置经度</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">27</td> 
+      <td>lat</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">纬度；用户登录时的位置纬度</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">28</td> 
+      <td>is_realname_auth</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否实名认证(0否 1 是)；实名通过后会往 com_user_info 表中插入实名信息数据</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">29</td> 
+      <td>account_sponsor_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">推荐人ID；推荐会员在com_account_info_20220701_20220707表中的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">30</td> 
+      <td>agent_account_sponsor_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">黄金会员ID；推荐黄金会员在com_account_info_20220701_20220707表中的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">31</td> 
+      <td>boss_account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">老板ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">32</td> 
+      <td>source</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户来源(NATURE 自然流量; SERVICE_SPONSOR 服务商推荐; SPONSOR 会员推荐； MERCHANT 商户入驻; 空值 - 机器人或总控创建的服务商对应的会员账号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">33</td> 
+      <td>last_login_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">最后登录时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">34</td> 
+      <td>audit_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">实名认证审核时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">35</td> 
+      <td>account_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">GENERAL_MEMBER</td> 
+      <td align="center">账户类型（会员;商户;服务商） GENERAL_MEMBER 普通会员 SELLER 服务商 MAIN_ACCOUNT 企业主播主账号 MERCHANT 商户 VIRTUAL_MEMBER 虚拟会员（机器人） CHILD_ACCOUNT 企业主播子账号</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">36</td> 
+      <td>gdc_user_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">DEFAULT</td> 
+      <td align="center">GDC会员类型 DEFAULT 默认值，普通会员，与GDC无关 GDC_TO_XIUYOU 从GDC注册同步到秀友的会员 XIUYOU_TO_GDC 原秀友会员在GDC注册的会员 空值 机器人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">37</td> 
+      <td>service_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">会员归属的服务商ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">38</td> 
+      <td>service_account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">服务商会员账号ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">39</td> 
+      <td>affiliation_province_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">归属省份ID；com_area_info 地区表的主键id （服务商推荐的会员与服务商归属省份一致； 其他会员取会员登录时的定位；目前该字段没用）；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">40</td> 
+      <td>affiliation_city_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">归属城市ID；com_area_info 地区表的主键id （服务商推荐的会员与服务商归属城市一致； 其他会员取会员登录时的定位；目前该字段没用）；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">41</td> 
+      <td>affiliation_area_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">归属地区Id；com_area_info 地区表的主键id （服务商推荐的会员与服务商归属地区一致； 其他会员取会员登录时的定位；目前该字段没用）；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">42</td> 
+      <td>merchant_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">商户ID；会员关联的商户账号id，xqxc_merchant.merchant_info表的主键id；；xqxc_merchant.merchant_info；xqxc_merchant.merchant_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">43</td> 
+      <td>operations_center_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">运营中心ID；会员归属的运营中心id，公司表 xqxc_admin.com_company_info 的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">44</td> 
+      <td>area_company_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">区域公司ID；会员归属的区域公司id，公司表 xqxc_admin.com_company_info 的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">45</td> 
+      <td>first_letter</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">首字母（搜索引擎使用；会员昵称的首字母）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">46</td> 
+      <td>live_state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">直播状态： END 直播结束（回放）； LIVE 直播中； NO_VIEWING 禁播中； NONE 未开播；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">47</td> 
+      <td>live_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">直播类型，用于区分用户当前直播间的直播类型： LIVE_BORADCAS_CLASS 普通直播； BUNIESS_LIVE_BORADCAS_CLASS 商学院直播； CHARGE_LIVE_BORADCAS_CLASS 知识付费直播； 空值 未开播或历史开播数据(该字段增加前的开播数据)；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">48</td> 
+      <td>last_live_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">最后开播时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">49</td> 
+      <td>reg_ip</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">注册ip地址</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">50</td> 
+      <td>open_anchor_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">开通主播的时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">51</td> 
+      <td>is_buy_anchor</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否有购买开播资格（1是 0否）；购买开播资格后，需要实名通过认证才成为主播</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">52</td> 
+      <td>source_account</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改账号后需要保存原有的旧账号(手机号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">53</td> 
+      <td>anchor_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">GENERAL_ANCHOR</td> 
+      <td align="center">主播类型(普通主播：GENERAL_ANCHOR 商户主播MERCHANT_ANCHOR)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">54</td> 
+      <td>is_activate</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">是否激活， 1激活，0未激活； 用于标识服务商注册自动创建的会员是否为临时创建，临时创建的会员用于服务商注册的支付流程，其他说明： 1.注册的服务商在审核通过前，自动创建的会员状态默认为未激活； 2.状态为未激活的会员，登录后状态变更为激活，归属为自然流量； 3.未激活的会员不会在会员列表显示，可被其他会员或其他服务商邀请（归属关系变更） 4.注册的服务商审核通过后，自动创建的会员状态变更为激活，且该会员的归属变更为归属该服务商；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">55</td> 
+      <td>main_account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">子账号归属的企业主播主账号ID，默认0；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">56</td> 
+      <td>child_effective_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">企业主播子账号生效时间，仅用户类型为子账号有用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">57</td> 
+      <td>merchant_sponsor_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">推荐商户ID；推荐商户id在merchant_info表中的主键id；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">58</td> 
+      <td>extend_data</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">{}</td> 
+      <td align="center">扩展数据</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">59</td> 
+      <td>invite_register_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">邀请注册时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="settle_market_user"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：settle_market_user</b> 
+   </div> 
+   <div>
+     说明：合伙人业绩主表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>marketing_rule_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center">0</td> 
+      <td align="center">规则配置ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>stats_start_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">统计开始时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>stats_end_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">统计结束时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>state</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">状态，-1：当前规则下失败或无数据，0：待生成，1：生成中，2：生成完成</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>rule_content</td> 
+      <td align="center">varchar</td> 
+      <td align="center">10240</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">规则内容</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>gmt_modified</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="settle_market_user_item"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：settle_market_user_item</b> 
+   </div> 
+   <div>
+     说明：合伙人业绩明细 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>marketing_rule_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">规则配置ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>market_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">合伙人ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>market_user_tel</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">合伙人电话</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>market_user_nickname</td> 
+      <td align="center">varchar</td> 
+      <td align="center">50</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">合伙人昵称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>market_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">合伙人等级ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>member_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">会员等级ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>total_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">总业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>large_region_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">大区业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>village_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">小区业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>personal_num</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">大区个人业绩团队人数</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>personal_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">大区个人业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>community_num</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">小区个人业绩团队人数</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>community_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">小区个人业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>self_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">自身个人业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="un_settle_market_user_item"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：un_settle_market_user_item</b> 
+   </div> 
+   <div>
+     说明：合伙人业绩明细 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>marketing_rule_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">规则配置ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>market_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">合伙人ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>market_user_tel</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">合伙人电话</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>market_user_nickname</td> 
+      <td align="center">varchar</td> 
+      <td align="center">50</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">合伙人昵称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>market_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">合伙人等级ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>member_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">会员等级ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>total_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">总业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>big_dept_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">大区ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>large_region_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">大区业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>village_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">小区业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>personal_num</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">大区个人业绩团队人数</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>personal_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">大区个人业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>community_num</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">小区个人业绩团队人数</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>community_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">小区个人业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>self_money</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">自身个人业绩，单位：分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>remark</td> 
+      <td align="center">varchar</td> 
+      <td align="center">500</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">说明</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="user_account_market_count_20220701_20220707"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：user_account_market_count_20220701_20220707</b> 
+   </div> 
+   <div>
+    说明：user_account_market_count_20220701_20220707
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center">0</td> 
+      <td align="center">会员ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>recommend_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">推荐人ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>invite_register_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">邀请注册时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>account_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">账号等级ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>user_market_level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">合伙人等级ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>market_user_flag</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否合伙人，1：是，0：否</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>total_account_count</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请会员数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>total_account_count_me</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">直接邀请会员数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>total_market_count</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请合伙人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>total_market_count_me</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">直接邀请合伙人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>total_account_me_level_count1</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">直接邀请普通会员人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>total_account_me_level_count2</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">直接邀请银卡会员人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>total_account_me_level_count3</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">直接邀请金卡会员人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>total_account_me_level_count4</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">直接邀请钻卡会员人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>total_account_level_count1</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请普通会员人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>total_account_level_count2</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请银卡会员人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>total_account_level_count3</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请金卡会员人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>total_account_level_count4</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请钻卡会员人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td>total_market_count1</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请钻石合伙人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">20</td> 
+      <td>total_market_count2</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请白钻合伙人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">21</td> 
+      <td>total_market_count3</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请银钻合伙人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">22</td> 
+      <td>total_market_count4</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请金钻合伙人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">23</td> 
+      <td>total_market_count5</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">团队邀请黑钻合伙人数量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">24</td> 
+      <td>gmt_modified</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">25</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="user_market_info"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：user_market_info</b> 
+   </div> 
+   <div>
+     说明：贝小集-合作伙伴 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">会员帐户；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>nick_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">昵称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>head_url</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">头像</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>tel</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">手机号码</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">等级ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>state</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">禁用/启用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>extend_data</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">扩展数据</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>remark</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">备注</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>gmt_modified</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="user_market_info_20220701_20220707"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：user_market_info_20220701_20220707</b> 
+   </div> 
+   <div>
+     说明：贝小集-合作伙伴 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>account_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">会员帐户；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>nick_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">昵称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>head_url</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">头像</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>tel</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">手机号码</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>level_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">等级ID；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>state</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">禁用/启用</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>extend_data</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">扩展数据</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>remark</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">备注</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>gmt_modified</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <footer></footer>  
+ </body>
+</html>

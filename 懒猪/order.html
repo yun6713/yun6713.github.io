@@ -1,0 +1,5956 @@
+<html lang="zh">
+ <head></head>
+ <body style="text-align:center;">
+  ﻿
+  <title>order文档</title>
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style>
+  <div style="width:800px; margin:20px auto; text-align:left;">
+   <a name="index"></a>
+   <h2 style="text-align:center; line-height:50px;">order文档</h2>
+   <div>
+    <b>数据库名：order</b>
+    <br><b>文档版本：0.0.1-SNAPSHOT</b>
+    <br><b>文档描述：order文档生成</b>
+    <br>
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>表名</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td><a href="#od_ali_phone_warning">od_ali_phone_warning</a></td>
+      <td>阿里虚拟号告警</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td><a href="#od_delivery_complaint">od_delivery_complaint</a></td>
+      <td>配送投诉</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td><a href="#od_delivery_contact_record">od_delivery_contact_record</a></td>
+      <td>通信记录表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td><a href="#od_delivery_contact_relation">od_delivery_contact_relation</a></td>
+      <td>配送单通信绑定关系表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td><a href="#od_delivery_help_record">od_delivery_help_record</a></td>
+      <td>求助记录表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td><a href="#od_delivery_punishment">od_delivery_punishment</a></td>
+      <td>罚单表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td><a href="#od_delivery_refund">od_delivery_refund</a></td>
+      <td>配送退款表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td><a href="#od_delivery_reward">od_delivery_reward</a></td>
+      <td>奖励表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td><a href="#od_order_common">od_order_common</a></td>
+      <td>通用订单表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td><a href="#od_order_common_details">od_order_common_details</a></td>
+      <td>增值服务表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td><a href="#od_order_common_recharge">od_order_common_recharge</a></td>
+      <td>充值发票记录表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td><a href="#od_order_config">od_order_config</a></td>
+      <td>订单配置表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td><a href="#od_order_delivery">od_order_delivery</a></td>
+      <td>配送订单表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td><a href="#od_order_delivery_fee">od_order_delivery_fee</a></td>
+      <td>配送订单费用表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td><a href="#od_order_delivery_file">od_order_delivery_file</a></td>
+      <td>配送单相关文件表（图片等）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td><a href="#od_order_delivery_group">od_order_delivery_group</a></td>
+      <td>配送订单组表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td><a href="#od_order_delivery_shipper_consignee">od_order_delivery_shipper_consignee</a></td>
+      <td>配送订单位置信息表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td><a href="#od_order_delivery_status_update_log">od_order_delivery_status_update_log</a></td>
+      <td>配送订单状态日志表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td><a href="#od_order_delivery_timeline">od_order_delivery_timeline</a></td>
+      <td>配送订单时间表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td><a href="#od_order_delivery_zone">od_order_delivery_zone</a></td>
+      <td>配送单区域信息表，当配送单为区域单时，与od_order_delivery表一一对应</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td><a href="#od_order_delivery_zone_path">od_order_delivery_zone_path</a></td>
+      <td>配送单区域路径表，od_order_delivery表一条对应该表多条数据</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td><a href="#od_order_refund">od_order_refund</a></td>
+      <td>通用订单退款表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td><a href="#od_order_tips">od_order_tips</a></td>
+      <td>小费订单表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td><a href="#od_pre_delivery_group_ref">od_pre_delivery_group_ref</a></td>
+      <td>配送预订单支付组关系表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">25</td>
+      <td><a href="#od_pre_delivery_import">od_pre_delivery_import</a></td>
+      <td>导入的配送预订单表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">26</td>
+      <td><a href="#od_punishment_appeal_record">od_punishment_appeal_record</a></td>
+      <td>申诉记录表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">27</td>
+      <td><a href="#od_punishment_handle_record">od_punishment_handle_record</a></td>
+      <td>处罚记录表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">28</td>
+      <td><a href="#od_punishment_type">od_punishment_type</a></td>
+      <td>惩罚原因类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">29</td>
+      <td><a href="#od_rider_accepted_delivery_ref">od_rider_accepted_delivery_ref</a></td>
+      <td>骑手关联订单表</td>
+     </tr>
+    </tbody>
+   </table><a name="od_ali_phone_warning"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_ali_phone_warning</b>
+   </div>
+   <div>
+    说明：阿里虚拟号告警
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单Id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>phone1</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">AXB中的A号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>phone2</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">AXB中的B号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>pool_key</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">号码池key</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>is_send_msg</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否已发送告警短信：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_delivery_complaint"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_delivery_complaint</b>
+   </div>
+   <div>
+    说明：配送投诉
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>order_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">销售订单id；xqxc_order.order_info</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">配送单id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">类型枚举：LZBWS-帮我送，LZBWQ-帮我取，LZBWM-帮我买，LZJJS-加急送</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>source_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">投诉人id（用户，商户）；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>source_tel</td>
+      <td align="center">varchar</td>
+      <td align="center">24</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">投诉人手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>source_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">投诉人名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>source_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">投诉人类型（用户，商户）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">被投诉骑手id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>rider_tel</td>
+      <td align="center">varchar</td>
+      <td align="center">24</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">被投诉骑手手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>rider_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">被投诉骑手名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>reason_ids</td>
+      <td align="center">varchar</td>
+      <td align="center">2048</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">投诉原因id(多个用逗号隔开)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>reasons</td>
+      <td align="center">varchar</td>
+      <td align="center">2048</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">投诉原因(多个用逗号隔开)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>others_reason</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">其它说明</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>punishment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">罚单id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>process_state</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处理状态(未处理，已处理)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>process_desc</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处理说明</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>is_refund</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否退费(0:不退回，1:退回)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>refund_fee</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">退回费用(分)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>gmt_modify</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_delivery_contact_record"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_delivery_contact_record</b>
+   </div>
+   <div>
+    说明：通信记录表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单Id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>delivery_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>sub_id</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">三方绑定关系ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>pool_key</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">号码池key</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>record_id</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">通话记录的ID/短信记录的ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">记录类型:CALL-语音，SMS-短信</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>phone_no</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">AXB中的A号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>secret_no</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">AXB中的X号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>peer_no</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">AXB中的B号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>call_type</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">呼叫类型，包括： 0：主叫，即phone_no打给peer_no。 1：被叫，即peer_no打给phone_no。 2：短信发送。 3：短信接收。 4：呼叫拦截 5：短信收发拦截</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>sms_type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">短信类型: 1：短信截取 2：智能短信</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>start_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">被叫接听时间（通话开始时间）或短信发送时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>release_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">被叫挂断时间。release_time和start_time之差表示通话时长， 如果结果为0，说明呼叫未接通</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>call_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">呼叫时间，用来请求录音文件</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>record_url</td>
+      <td align="center">varchar</td>
+      <td align="center">512</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">录音文件地址，非阿里云返回地址，转储到云平台的地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>record_file_id</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">七牛云录音文件filename；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>sms_content</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">短信内容</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>release_cause</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">释放原因</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_delivery_contact_relation"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_delivery_contact_relation</b>
+   </div>
+   <div>
+    说明：配送单通信绑定关系表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单Id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>delivery_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>phone1</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">AXB中的A号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>phone2</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">AXB中的B号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>phonex</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">AXB中的X号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>pool_key</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">号码池key</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>sub_id</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">三方绑定关系ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>is_unbind</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否已解绑：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_delivery_help_record"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_delivery_help_record</b>
+   </div>
+   <div>
+    说明：求助记录表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送订单ID，对应o_order_delivery表ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>from_rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发出求助的骑手ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>from_rider_mobile</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发出求助的骑手手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>to_rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收到求助的骑手ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>to_rider_mobile</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收到求助的骑手手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>is_success</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否求助成功：0-未操作或拒绝，1-同意</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_delivery_punishment"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_delivery_punishment</b>
+   </div>
+   <div>
+    说明：罚单表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>order_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">配送单id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">骑手id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>rider_tel</td>
+      <td align="center">varchar</td>
+      <td align="center">24</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑手手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>rider_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑手名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>punishment_type_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚类型id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>punishment_type</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>punishment_way</td>
+      <td align="center">varchar</td>
+      <td align="center">600</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚方式描述</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>punishment_desc</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚说明</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>punishment_state</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>reasons</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚原因</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>appeal_state</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">申诉状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>source_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">来源类型(投诉处理新建、系统自动生成等)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>source_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">来源；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>handle_desc</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处理说明</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>fines</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">处罚金额(分)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>service_score</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">处罚服务分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>level_score</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">处罚等级分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>black_days</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">拉黑天数</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>gmt_modify</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">记录更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_delivery_refund"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_delivery_refund</b>
+   </div>
+   <div>
+    说明：配送退款表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">用户ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送费或小费退款，对应o_order_delivery表ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>fee_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">小费退款，对应order_tips表ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>amount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款金额，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>sub_amount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">子项退款金额（如小费与配送单合并支付，记录退款的小费），单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>status</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>pay_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款用支付单号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>refund_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>refund_reason</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款原因</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>refund_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款成功时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>refund_pay_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付返回退款id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否逻辑删除：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_delivery_reward"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_delivery_reward</b>
+   </div>
+   <div>
+    说明：奖励表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>order_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">配送单id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">骑手id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>rider_tel</td>
+      <td align="center">varchar</td>
+      <td align="center">24</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑手手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>rider_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑手名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>punishment_type_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚类型id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>punishment_type</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>punishment_way</td>
+      <td align="center">varchar</td>
+      <td align="center">600</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚方式描述</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>punishment_desc</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚说明</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>punishment_state</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>reasons</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚原因</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>appeal_state</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">申诉状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>source_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">来源类型(投诉处理新建、系统自动生成等)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>source_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">来源；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>handle_desc</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处理说明</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>fines</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">处罚金额(分)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>service_score</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">处罚服务分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>level_score</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">处罚等级分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>black_days</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">拉黑天数</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>gmt_modify</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">记录更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_common"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_common</b>
+   </div>
+   <div>
+    说明：通用订单表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单类型，枚举</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">购买用户ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>user_mobile</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">购买用户手机号（开通账号）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>user_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">用户类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>original_price</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">原价金额，单位</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>pay_price</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付金额，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>status</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>pay_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付单号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>pay_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">付款时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>pay_type</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付方式</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>pay_access_type</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付通道</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>recommend_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">推广人ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>recommend_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">推广人（经纪人/运营公司名称）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>recommend_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">推广类型（后台推广来源）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>recommend_mobile</td>
+      <td align="center">varchar</td>
+      <td align="center">16</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">推广人手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>recommend_source</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">H5，APP</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否逻辑删除：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>province_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">省id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>city_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">市id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>area_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">区域id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>town_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">县id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">25</td>
+      <td>op_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">所属运营公司ID；</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_common_details"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_common_details</b>
+   </div>
+   <div>
+    说明：增值服务表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>od_order_common_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单主表id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>goods_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商品ID（服务ID）；xqxc_goods.goods_info</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>service_name</td>
+      <td align="center">varchar</td>
+      <td align="center">30</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">服务名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>sale_price</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">销售价</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>market_price</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">市场价</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>goods_desc</td>
+      <td align="center">mediumtext</td>
+      <td align="center">16777215</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商品描述</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>main_img_urls</td>
+      <td align="center">varchar</td>
+      <td align="center">500</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">主图url，多张用逗号隔开</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>broker_sale_rete</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">经纪人销售收益1%=100</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>broker_manage_rate</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">运营公司管理费率1%=100</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>company_sale_rate</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">公司销售收益比例1%=100</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>gmt_modified</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_common_recharge"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_common_recharge</b>
+   </div>
+   <div>
+    说明：充值发票记录表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>pay_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付单id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>invoice_no</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发票号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>invoice_memo</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发票备注</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_config"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_config</b>
+   </div>
+   <div>
+    说明：订单配置表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>code</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配置编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配置名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>unit</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超时单位</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>over_time_value</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">超时时间值</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>gmt_modify</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">记录更新时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_delivery"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_delivery</b>
+   </div>
+   <div>
+    说明：配送订单表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">类型枚举：LZBWS-帮我送，LZBWQ-帮我取，LZBWM-帮我买，LZJJS-加急送</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>is_zone</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否区域单：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>group_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单组id，标识该订单所在组，如非订单组，该值为订单id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>group_seq</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">订单所在订单组序列，从1开始</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>rider_name</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>rider_phone</td>
+      <td align="center">varchar</td>
+      <td align="center">16</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士注册手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发单用户id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>user_name</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发单用户用户名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>enterprise_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商户id，如发单用户为商户或子账号，保存所属商户id，是该单扣款商户id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>bind_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">绑定商户id，根据猪耳朵注册绑定的发单懒猪商户id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>weight</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">总重量，数值代表千克，0表示小于1千克</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>goods_count</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商品总件数</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>status</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>memo</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">备注</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>goods_category</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">物品品类</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>cancel_reason</td>
+      <td align="center">varchar</td>
+      <td align="center">512</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">如取消配送单，记录取消原因；如异常，记录异常备注</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>is_delay</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否超时：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>receive_code</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单收件码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>pick_up_code</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单取件码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>is_send_pick_up</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">是否发送取件码标识</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>is_send_receive</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">是否发送收件码标识</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>load_code</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单收单码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">25</td>
+      <td>level_score</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">该配送单奖励等级分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">26</td>
+      <td>cancel_flag</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">取消标识：USER_CANCEL-用户取消，RIDER_CANCEL-骑士取消</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">27</td>
+      <td>area_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单所属区县id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">28</td>
+      <td>open_api_code</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">第三方来源code</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">29</td>
+      <td>order_source</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">LAZY_APP</td>
+      <td align="center">订单来源 LAZY_APP-懒猪APP MERCHANT_BACKSTAGE-商户后台, OPEN_API-第三方</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">30</td>
+      <td>source_channel</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单来源渠道: MEI_TUAN-美团 ELEME-饿了么 ELEME_RETAIL-饿了么零售 MEI_TUAN_QUICK-美团闪购 OTHER-其他</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">31</td>
+      <td>ext_third_order</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">第三方单号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">32</td>
+      <td>transport_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单所属小运力公司ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">33</td>
+      <td>transport_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单所属小运力公司名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">34</td>
+      <td>op_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士运营公司ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">35</td>
+      <td>op_name</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士运营公司名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">36</td>
+      <td>buy_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">帮买类型： ASSIGNED-指定店铺；NEARBY-就近；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">37</td>
+      <td>tags</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">帮买标签</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">38</td>
+      <td>is_pre_cancel</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否预取消：0-否，1-是（前端查看支付中预取消订单为已取消）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">39</td>
+      <td>anomaly_type</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">异常类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">40</td>
+      <td>is_transfer</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否转单：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">41</td>
+      <td>is_assign</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否指派：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">42</td>
+      <td>transfer_status</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">众包骑手转单状态 TransferStatusEnum TRANSFERING-转交中 , SUCCESS-转交成功 , FAIL-转交失败</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">43</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否逻辑删除：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">44</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">45</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_delivery_fee"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_delivery_fee</b>
+   </div>
+   <div>
+    说明：配送订单费用表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单id,o_order_delivery表的id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>pay_amount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">用户实际支付总金额，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>delivery_fee</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">用户实际支付的配送费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>pre_revenue</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">骑士预计收益，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>transport_revenue</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">小运力公司预收益，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>tips</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">总支付小费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>rider_tips</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">骑士小费收益（除税费），单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>rider_tax</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士个税，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>baseAmount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">基础运费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>weight_surcharge</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">重量附加费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>time_surcharge</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">时段附加费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>other_surcharge</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">其他附加费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>goods_price</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">物品价值</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>reward</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">配送单奖励，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>pay_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付成功后支付返回的id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>pay_type</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付方式</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>pay_access_type</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付通道</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>coupon_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">优惠券ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>coupon_fee</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">优惠券抵扣金额，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>deduct_type</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">违约金类型：USER-用户承担，PLATFORM-平台承担</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>deduct_fee</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">取消扣除费用，记录发生违约等产生扣除的费用，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>fee_json</td>
+      <td align="center">json</td>
+      <td align="center"></td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">运费规则配置信息</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">25</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_delivery_file"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_delivery_file</b>
+   </div>
+   <div>
+    说明：配送单相关文件表（图片等）
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单ID，关联od_order_delivery表ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>name</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">文件名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>url</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">文件地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">文件类型枚举：BUY-已买到图片，ANOMALY-异常上报图片，PICK_UP_EVIDENCE-取件凭证，ARRIVE_EVIDENCE-送达凭证，BACK_EVIDENCE-送回凭证</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center"></td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_delivery_group"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_delivery_group</b>
+   </div>
+   <div>
+    说明：配送订单组表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发单用户id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>user_name</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发单用户用户名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>shipper_phone</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人联系方式</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>status</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单组状态：PAYING-待支付，PAID-已支付，CANCELED-整单取消</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>is_pre_cancel</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否预取消：0-否，1-是（前端查看支付中预取消订单为已取消）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否逻辑删除：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_delivery_shipper_consignee"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_delivery_shipper_consignee</b>
+   </div>
+   <div>
+    说明：配送订单位置信息表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单id，关联o_order_delivery表的id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>city_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货所在城市ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>shipper_name</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>shipper_phone</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人联系方式</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>shipper_addr</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人详细地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>shipper_addr_label</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人地址标记点</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>shipper_addr_no</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人地址门牌号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>shipper_longitude</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人经度</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>shipper_latitude</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人纬度</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>to_shipper_distance</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">接单时骑手到发货人的距离，单位米</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>consignee_name</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货人名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>consignee_phone</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货人联系方式</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>consignee_addr</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货人详细地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>consignee_addr_label</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货人地址标记点</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>consignee_addr_no</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货人地址门牌号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>consignee_longitude</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货人经度</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>consignee_latitude</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货人纬度</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>to_consignee_distance</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑手或者发件人到收货人的距离，单位米</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>rider_accepted_lng</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士接单时经度</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>rider_accepted_lat</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士接单时纬度</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_delivery_status_update_log"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_delivery_status_update_log</b>
+   </div>
+   <div>
+    说明：配送订单状态日志表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单ID，对应o_order_delivery表的ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>group_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送订单组ID，非组订单或拆单后为null；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑手ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>delivery_status</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单变更状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>create_user_name</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建记录的用户名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_delivery_timeline"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_delivery_timeline</b>
+   </div>
+   <div>
+    说明：配送订单时间表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单id，关联o_order_delivery表的id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>pay_timeout_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付超时时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>expected_arrive_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">预计送达时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>publish_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">预约发单时间，null表示立即发单</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>actual_publish_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">实际发单时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>actual_pay_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">用户实际支付完成时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>actual_accept_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">实际接单时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>expect_to_shipper_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">预计到发件地址时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>actual_to_shipper_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">实际到发件地址时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>actual_pick_up_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">实际取件时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>actual_deliver_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">实际送达时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>actual_finish_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">实际完成时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>actual_cancel_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">实际取消时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_delivery_zone"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_delivery_zone</b>
+   </div>
+   <div>
+    说明：配送单区域信息表，当配送单为区域单时，与od_order_delivery表一一对应
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>zone_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">区域单所属区域ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>zone_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">区域单所属区域名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>belong</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">区域单当前所属：MER-商户，RIDER-骑士，LINK-分拣点，CUS-客户</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>link_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">区域单所属分拣点ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>link_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">区域单所属分拣点名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>tag_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">区域单所属订单组名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_delivery_zone_path"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_delivery_zone_path</b>
+   </div>
+   <div>
+    说明：配送单区域路径表，od_order_delivery表一条对应该表多条数据
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>rider_name</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>rider_phone</td>
+      <td align="center">varchar</td>
+      <td align="center">16</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">路径类型，对应枚举DeliveryPathTypeEnum</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>msg</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">事件内容</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>start_type</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">计算分段时的起始点：MER-商户，LINK-分拣点</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>start_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">分段起始点ID，商户ID或分拣点ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>start_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">分段起始点名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>end_type</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">计算分段时的结束点：LINK-分拣点，CUS-客户</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>end_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">分段结束点ID，分拣点ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>end_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">分段结束点名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>fee</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">分段费用，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>fee_conf</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">分段费用是否设置：0未设置，1设置</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_refund"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_refund</b>
+   </div>
+   <div>
+    说明：通用订单退款表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">用户ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>order_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">通用订单id，对应od_order_common表ID；xqxc_order.order_info</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>amount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款金额，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>status</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>pay_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款用支付单号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>refund_reason</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款原因</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>refund_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款成功时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>refund_pay_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付返回退款id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否逻辑删除：0-否，1-是</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_order_tips"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_order_tips</b>
+   </div>
+   <div>
+    说明：小费订单表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单ID，对应o_order_delivery表的ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>category</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">分类：DELIVERY-配送费合并；ADD-单独追加</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>status</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">小费支付状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>pay_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>amount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">小费金额，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>pay_type</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付方式</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>pay_access_type</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付通道</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>actual_pay_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">用户实际支付完成时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_pre_delivery_group_ref"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_pre_delivery_group_ref</b>
+   </div>
+   <div>
+    说明：配送预订单支付组关系表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>pay_group_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付配送单组id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>pre_delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">关联od_import_pre_delivery的id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否删除：0-未删除，1-已删除</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_pre_delivery_import"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_pre_delivery_import</b>
+   </div>
+   <div>
+    说明：导入的配送预订单表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键，也是预订单id，后面转化为订单id，用订单id相同的sequence生成</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">导入用户id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>serial_no</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">导入批次号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>shipper_name</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>shipper_phone</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货人手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>shipper_addr</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货地址-导入地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>shipper_addr_detail</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货地址识别详细地址，识别失败可为空</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>shipper_addr_label</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货地址识别标记点，识别失败可为空</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>shipper_addr_no</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货地址门牌号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>shipper_lng</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货地址识别经度，识别失败可为空</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>shipper_lat</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货地址识别纬度，识别失败可为空</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>shipper_city</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发货地址所在城市</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>consignee_name</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货人名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>consignee_phone</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货人手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>consignee_addr</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货地址-导入地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>consignee_addr_detail</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货地址识别详细地址，识别失败可为空</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>consignee_addr_label</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货地址识别标记点，识别失败可为空</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>consignee_addr_no</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货地址门牌号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>consignee_lng</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货地址识别经度，识别失败可为空</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>consignee_lat</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">6</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货地址识别纬度，识别失败可为空</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>consignee_city</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">收货地址所在城市</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>weight</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">物品重量，单位千克</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>goods_price</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">物品价格范围</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>goods_category</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">物品品类</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">25</td>
+      <td>delivery_type</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单类型：LZBWS-帮我送，LZBWQ-帮我取，LZBWM-帮我买</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">26</td>
+      <td>publish_type</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">发单类型:立即发单，预约发单</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">27</td>
+      <td>publish_time</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">预约发单时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">28</td>
+      <td>import_result</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">导入结果：0-成功-1.失败</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">29</td>
+      <td>import_result_msg</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">系统反馈-导入结果</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">30</td>
+      <td>file_name</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">导入文件名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">31</td>
+      <td>file_id</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">七牛云文件标识；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">32</td>
+      <td>delivery_distance</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送订单距离，单位米</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">33</td>
+      <td>total_fee</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">总费用(配送费用)，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">34</td>
+      <td>coupon_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">优惠券ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">35</td>
+      <td>coupon_fee</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">优惠金额，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">36</td>
+      <td>pay_amount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">付款金额，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">37</td>
+      <td>baseAmount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">基础运费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">38</td>
+      <td>weight_surcharge</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">重量附加费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">39</td>
+      <td>time_surcharge</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">时段附加费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">40</td>
+      <td>other_surcharge</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">其他附加费，单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">41</td>
+      <td>is_lock</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否锁定：0-未锁定，1-已锁定</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">42</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否删除：0-未删除，1-已删除</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">43</td>
+      <td>fee_json</td>
+      <td align="center">json</td>
+      <td align="center"></td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">运费规则配置信息</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">44</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">45</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间(导入时间)</td>
+     </tr>
+    </tbody>
+   </table><a name="od_punishment_appeal_record"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_punishment_appeal_record</b>
+   </div>
+   <div>
+    说明：申诉记录表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>punishment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">罚单id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑手ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>reason_type</td>
+      <td align="center">varchar</td>
+      <td align="center">250</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">申诉理由</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>media</td>
+      <td align="center">varchar</td>
+      <td align="center">3000</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">多媒体信息（图片、视频）json(AttachFileVO)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>handle_state</td>
+      <td align="center">varchar</td>
+      <td align="center">250</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">申诉结果状态AppealRecordStateEnum</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>operator</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">操作人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>operator_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">操作人id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>gmt_handle</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">处理时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>remark</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">申诉理由备注</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>handle_remark</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处理说明</td>
+     </tr>
+    </tbody>
+   </table><a name="od_punishment_handle_record"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_punishment_handle_record</b>
+   </div>
+   <div>
+    说明：处罚记录表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>punishment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">罚单id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>operate_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">操作类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>record</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">处罚记录</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>operator</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">操作人(系统、管理员、骑手)</td>
+     </tr>
+    </tbody>
+   </table><a name="od_punishment_type"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_punishment_type</b>
+   </div>
+   <div>
+    说明：惩罚原因类型
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>name</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">惩罚原因</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>status</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">状态 0-禁用,1-开启</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>sort_no</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">排序号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>gmt_modify</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">记录更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="od_rider_accepted_delivery_ref"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_rider_accepted_delivery_ref</b>
+   </div>
+   <div>
+    说明：骑手关联订单表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>rider_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑手id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>delivery_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">配送单id，关联order_delivery表的id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>is_active</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">是否当前骑手配送：0-非激活，1-激活</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>pre_revenue</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士取消后的收益快照</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>tips</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士取消后的小费快照</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>cancel_reason</td>
+      <td align="center">varchar</td>
+      <td align="center">512</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士取消后的取消原因快照</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>actual_accept_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士取消后的实际接单快照快照</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>actual_cancel_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">骑士取消后的实际取消时间快照</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>gmt_modify</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center"></td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <footer></footer>
+ </body>
+</html>

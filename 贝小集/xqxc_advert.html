@@ -1,0 +1,2314 @@
+<html lang="zh"> 
+ <head></head> 
+ <body style="text-align:center;">
+   ﻿ 
+  <title>xqxc_advert文档</title> 
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style> 
+  <div style="width:800px; margin:20px auto; text-align:left;"> <a name="index"></a> 
+   <h2 style="text-align:center; line-height:50px;">xqxc_advert文档</h2> 
+   <div> <b>数据库名：xqxc_advert</b> 
+    <br><b>文档版本：0.0.1-SNAPSHOT</b> 
+    <br><b>文档描述：xqxc_advert文档生成</b> 
+    <br> 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>表名</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td><a href="#ad_browsing">ad_browsing</a></td> 
+      <td>广告分享记录表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td><a href="#ad_category">ad_category</a></td> 
+      <td>广告分类表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td><a href="#ad_check_record">ad_check_record</a></td> 
+      <td>广告审批记录表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td><a href="#ad_comment">ad_comment</a></td> 
+      <td>广告评论词组表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td><a href="#ad_comment_record">ad_comment_record</a></td> 
+      <td>广告评论记录表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td><a href="#ad_info">ad_info</a></td> 
+      <td>广告信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td><a href="#ad_likes">ad_likes</a></td> 
+      <td>广告点赞记录表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td><a href="#ad_merchant">ad_merchant</a></td> 
+      <td>广告页面信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td><a href="#ad_page">ad_page</a></td> 
+      <td>广告页面信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td><a href="#ad_page_goods">ad_page_goods</a></td> 
+      <td>广告页面商品信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td><a href="#ad_shares">ad_shares</a></td> 
+      <td>广告分享记录表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td><a href="#ad_space">ad_space</a></td> 
+      <td>广告位表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td><a href="#ad_stars">ad_stars</a></td> 
+      <td>广告评分表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td><a href="#ad_strategy">ad_strategy</a></td> 
+      <td>广告位投放策略表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td><a href="#ad_strategy_endpoint">ad_strategy_endpoint</a></td> 
+      <td>广告策略投放终端</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td><a href="#send_category">send_category</a></td> 
+      <td>投放分类信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td><a href="#send_goods">send_goods</a></td> 
+      <td>投放商品信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td><a href="#send_region">send_region</a></td> 
+      <td>投放区域表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td><a href="#send_user">send_user</a></td> 
+      <td>投放会员信息表</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_browsing"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_browsing</b> 
+   </div> 
+   <div>
+     说明：广告分享记录表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>ad_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_category"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_category</b> 
+   </div> 
+   <div>
+     说明：广告分类表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>category_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">分类名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>parent_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">上级ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>category_img</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">分类图片</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>category_grade</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">等级</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>sort</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">排序</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>deleted</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">删除标志.0:未删除;1:已删除</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">记录更新时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_check_record"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_check_record</b> 
+   </div> 
+   <div>
+     说明：广告审批记录表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>ad_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>check_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">审批类型</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>opinion</td> 
+      <td align="center">varchar</td> 
+      <td align="center">200</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">审批意见</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">操作人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">操作时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_comment"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_comment</b> 
+   </div> 
+   <div>
+     说明：广告评论词组表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">100</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>used_num</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">使用次数</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>sort_num</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">排序号</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>deleted</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">删除标志.0:未删除;1:已删除</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">记录更新时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_comment_record"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_comment_record</b> 
+   </div> 
+   <div>
+     说明：广告评论记录表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>ad_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>ad_comment_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">评论ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_info"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_info</b> 
+   </div> 
+   <div>
+     说明：广告信息表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>ad_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">100</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">档期</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>ad_page_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告界面ID；null；xqxc_advert.ad_info；xqxc_advert.ad_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>description</td> 
+      <td align="center">varchar</td> 
+      <td align="center">500</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">说明</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>ad_strategy_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">投放策略ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">WAITING</td> 
+      <td align="center">状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>deleted</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">删除标志.0:未删除;1:已删除</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">记录更新时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_likes"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_likes</b> 
+   </div> 
+   <div>
+     说明：广告点赞记录表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>ad_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_merchant"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_merchant</b> 
+   </div> 
+   <div>
+     说明：广告页面信息表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>title</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">标题</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>cover_url</td> 
+      <td align="center">varchar</td> 
+      <td align="center">128</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告封面URL</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>sort</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">排序</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>goods_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">绑定商品ID；null；xqxc_goods.goods_info；xqxc_goods.goods_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>goods_no</td> 
+      <td align="center">varchar</td> 
+      <td align="center">100</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">商品货号</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>goods_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">商品名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>provider_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">供应商名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">记录更新时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">店铺ID；null；xqxc_merchant.shop_info；xqxc_merchant.shop_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>use_scene</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">SERVICE_APP</td> 
+      <td align="center">使用场景(服务商:SERVICE_APP;智仓优选:SMAORAGE_YOUXUAN;共用:CONMMON;)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>style</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告样式</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>target_url</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">跳转URL</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>banner_position</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">HOME_TOP</td> 
+      <td align="center">banner显示位置：HOME_TOP 首页顶部；HOME_MIDDLE 首页腰部</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td>ad_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告类型GOODS跳转商品；URL跳转URL</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_page"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_page</b> 
+   </div> 
+   <div>
+     说明：广告页面信息表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>title</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">标题</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>content</td> 
+      <td align="center">mediumtext</td> 
+      <td align="center">16777215</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告内容(json串)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>cover_url</td> 
+      <td align="center">varchar</td> 
+      <td align="center">128</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告封面URL</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>content_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">16</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告类型(图文、视频))</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>deleted</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">删除标志.0:未删除;1:已删除</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>category_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告分类ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>browsing_count</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">浏览量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>likes_count</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">点赞数</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>share_count</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">分享数</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>duration</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">广告时长</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">记录更新时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_page_goods"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_page_goods</b> 
+   </div> 
+   <div>
+     说明：广告页面商品信息表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>ad_page_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告界面ID；null；xqxc_advert.ad_info；xqxc_advert.ad_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>goods_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">商品ID；null；xqxc_goods.goods_info；xqxc_goods.goods_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">店铺ID；null；xqxc_merchant.shop_info；xqxc_merchant.shop_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_shares"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_shares</b> 
+   </div> 
+   <div>
+     说明：广告分享记录表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>ad_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>share_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">分享类型</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_space"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_space</b> 
+   </div> 
+   <div>
+     说明：广告位表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>code</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告位编码</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">128</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告位名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>description</td> 
+      <td align="center">varchar</td> 
+      <td align="center">250</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告位描述</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>used_state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">2</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">占用状态(-1：系统内置，0：未使用，1：已使用)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>state</td> 
+      <td align="center">varchar</td> 
+      <td align="center">2</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">1</td> 
+      <td align="center">广告状态(开启、关闭</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>deleted</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">删除标志.0:未删除;1:已删除</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">记录更新时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_stars"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_stars</b> 
+   </div> 
+   <div>
+     说明：广告评分表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>ad_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>star</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">评分</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>comments</td> 
+      <td align="center">varchar</td> 
+      <td align="center">256</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">评论</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_strategy"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_strategy</b> 
+   </div> 
+   <div>
+     说明：广告位投放策略表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>strategy_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">策略名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>priority</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">策略优先级</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>start_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">投放开始时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>end_time</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0000-00-00 00:00:00.000</td> 
+      <td align="center">投放结束时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>ad_space_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告位ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>condition_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">24</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">投放条件</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>cost</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">消费金额</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>user_level</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">会员等级</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>is_anchor</td> 
+      <td align="center">varchar</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否主播</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>star_val</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">拥有星值</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>gender</td> 
+      <td align="center">varchar</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">2</td> 
+      <td align="center">性别</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>age_up</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">年龄上限</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>age_down</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">年龄下限</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>remark</td> 
+      <td align="center">varchar</td> 
+      <td align="center">240</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">备注</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>deleted</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">删除标志.0:未删除;1:已删除</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>state</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>create_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td>modify_user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改人</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">20</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">记录更新时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">21</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ad_strategy_endpoint"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ad_strategy_endpoint</b> 
+   </div> 
+   <div>
+     说明：广告策略投放终端 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>ad_strategy_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告策略ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>use_scene</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">投放端口</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>ad_space_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">广告位ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="send_category"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：send_category</b> 
+   </div> 
+   <div>
+     说明：投放分类信息表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>ad_strategy_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">投放策略ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>category_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">分类ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="send_goods"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：send_goods</b> 
+   </div> 
+   <div>
+     说明：投放商品信息表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>ad_strategy_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">投放策略ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>goods_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">商品ID；null；xqxc_goods.goods_info；xqxc_goods.goods_info</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="send_region"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：send_region</b> 
+   </div> 
+   <div>
+     说明：投放区域表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>ad_strategy_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">投放策略ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>region_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">区域ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="send_user"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：send_user</b> 
+   </div> 
+   <div>
+     说明：投放会员信息表 
+   </div> 
+   <div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>ad_strategy_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">投放策略ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">会员ID；null；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <footer></footer>  
+ </body>
+</html>
