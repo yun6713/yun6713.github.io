@@ -1,0 +1,79 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Anil K. Vijendran">
+    <title>猪耳朵系统参数</title>
+    <style type="text/css">
+        table { width: 85%; }
+        tr { vertical-align: top;}
+        td.single { width: 15%; }
+        td.multi { width: 15%; }
+    </style>
+    <script>
+        var params = "SLOGAN\tSLOGAN文案设置\t11SLOGAN文案设置SLOGAN文案设置SL\n" +
+            "MERCAHNT_ABOUT_US\t关于我们文案设置\t只允许11位数字输入KEFU_TEL\t客服电话设置\t02312345678\n" +
+            "BROKER_INCOME\t渠道收益说明\t渠道收益说\n" +
+            "TRANSPORT_NUM_OF_MONEY_MODE\t省钱模式运力公司默认勾选数量\t3\n" +
+            "TRANSPORT_NUM_OF_SPEED_MODE\t极速模式运力公司默认勾选数量\t3\n" +
+            "TRANSPORT_NUM_ON_SCRN\t单屏运力公司显示数量\t3\n" +
+            "COMPLAINT_OVER_LIMIT_TIME\t投诉超时时间(hour)\t1.1\n" +
+            "ABNORMAL_ORDERS_CONVERT_TIME\t异常订单扭转时间(hour)\t1.1\n" +
+            "IS_OPEN_ADD_TRANSPORT\t是否开启追加运力\t1\n" +
+            "MAX_DELIVERY_WEIGHT\t最大配送重量(kg)\t23\n" +
+            "MIN_DELIVERY_WEIGHT\t最小配送重量(kg)\t1\n" +
+            "IS_OPEN_PLAT_SERVICE_FEE\t运营公司与渠道商是否参与平台服务费分账\t1\n" +
+            "CHANNEL_SERVICE_RATE\t渠道商默认收益比例(%)\t20\n" +
+            "MERCHANT_ACCOUNT_RE_REGISTRATION_LIMT_TIME\t商家帐号重新注册限制时间\t1\n" +
+            "CLOSE_MERCHANT_ACCOUNT_LOGIN_WARNING\t限制注册期间商家帐号登录提示\t你的帐号已注销，{X}天后请重新注册，谢谢配合\n" +
+            "H5_URL\tH5域名url\thttp://devh5.pig-ear.com\n" +
+            "MERCHANT_APP_NAME\t猪耳朵商户版应用名称\t猪耳朵商户版\n" +
+            "MERCHANT_APP_ICON\t猪耳朵商户版应用ICON\thttps://online-lazypig.lazipig.com/icon500.png\n" +
+            "IOS_MERCHANT_APP_DOWNLOAD\tIOS猪耳朵商户版APP下载地址\thttps://apps.apple.com/cn/app/%E6%87%92%E7%8C%AA%E5%BF%AB%E9%80%81/id1563161526\n" +
+            "COMPANY_CLIENT_URL\t运营公司后台地址\thttps://online-lazypig.lazipig.com/icon500.png\n" +
+            "TIPS_MAX_AMOUNT\t小费累计最大金额（单位:元）\t100\n" +
+            "H5_QRCODE_URL\tH5生成二维码url\thttps://devh5.pig-ear.com/#/signup?referrerId={referrerId}&referrerRole={referrerRole}\n" +
+            "BROKER_INTEVIEW\t渠道商H5邀请广告语\t每多一家商户，预计您日收益增加{amount}元，行动吧！\n" +
+            "BROKER_INTEVIEW_AMOUNT\t渠道商H5邀请广告语中默认金额\t200.00\n" +
+            "BROKER_SHARETITLE\t渠道商分享标题\t猪耳朵商户注册\n" +
+            "BROKER_SHARECONTENT\t渠道商分享内容\t猪耳朵省时、省力、更省钱，聚合平台领跑者\n" +
+            "MERCHANT_PC_URL\t商户pc url\thttp://devm.pig-ear.com\n" +
+            "ANDROID_MERCHANT_APP_DOWNLOAD\tANDROID猪耳朵商户版APP下载地址\thttp://pig-ear.com/app.apk\n" +
+            "USER_DEFAULT_AVATAR\t商户默认头像\thttps://online-lazypig.lazipig.com/default_avar_2x.png\n" +
+            "BROKER_PRE_INCOME\t渠道待结算收益说明\t当日收益统一在次日10:00结算\n" +
+            "ELE_RETAIL_AUTH_URL\t饿了么零售授权url\thttps://nr.ele.me/eleme_nr_bfe_retail/api_bind_shop#/bindShop?source=D8C1218BDBBCC8D11EA9175A9A65DB2663CD828D99B331B5&fromSys=2\n" +
+            "TICKET_PREVIEW\t小票类型预览图\thttp://test-lazypig.lazipig.cn/6114f262-a92a-49c0-8291-3d3ebbf87e3d.jpg\n" +
+            "H5_BROKER_QRCODE_URL\tH5渠道推广生成二维码url\thttps://devh5.pig-ear.com/#/channel-invite?referrerId={referrerId}&referrerRole={referrerRole}&referrerTel={referrerTel}\n" +
+            "SHANSONG_M_AUTH_URL\t闪送商家授权地址url\thttp://open.s.bingex.com/auth?response_type=code&client_id={clientId}&state={state}&scope=shop_open_api&thirdStoreId={thirdStoreId}&redirect_uri=https%3A%2F%2Fdevh5.pig-ear.com%2F%23%2Fblend-view%2FshansongCallback\n" +
+            "AUTO_DELIVERY_INFO\t自动发单说明\t<p>1、什么是自动发单？</p>\n" +
+            "SMALL_AUTO_DELIVERY_WARNING\t自有运力-自动发单风险提示\t开启后，已接订单将自动发起配送\n" +
+            "SHOP_DELETE_GARBAGE\t统一把删除的门店归到此账号下\t18868707384\n" +
+            "PIG_M_AUTH_URL\t懒猪授权地址url\thttps://devh5.pig-ear.com/#/blend-view/lazipigAuthorization?shop_id={shopid}&user_id={userid}\n" +
+            "MTWM_DISABLE_PRINTER\t禁止美团订单打印\tfalse\n" +
+            "ORDER_DISTANCE\t订单最大距离\t20000\n" +
+            "PIG_PLAT_MERCHANTID\t懒猪平台运力统一扣款账号id\t2108405292078288\n" +
+            "DADA_M_CALLBACK_URL\t达达商家回调地址url\thttp://devh5.pig-ear.com/#/blend-view/dadaCallback";
+    </script>
+    <script>
+        window.onload = function(){
+            var param_table = document.getElementById("param_table");
+            var innerHtml = "";
+            params.split("\n").forEach(line=>{
+                const fields = line.split("\t");
+                innerHtml += "    <tr>\n" +
+                    "        <td class=\"single\" >"+fields[0]+"</td>\n" +
+                    "        <td class=\"single\" >"+fields[1]+"</td>\n" +
+                    "        <td class=\"single\" >"+fields[2]+"</td>\n" +
+                    "    </tr>";
+            })
+            param_table.innerHTML = innerHtml;
+        }
+    </script>
+</head>
+<body>
+<h1>懒猪</h1>
+<table id="param_table" border="1" style="width: 50%; ">
+</table>
+
+
+
+
+</body></html>
