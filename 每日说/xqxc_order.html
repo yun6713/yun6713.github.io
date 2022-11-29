@@ -274,51 +274,66 @@
      </tr>
      <tr>
       <td style="text-align:center;">51</td>
+      <td><a href="#order_supplement_attach">order_supplement_attach</a></td>
+      <td>客服补充记录附件表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">52</td>
+      <td><a href="#order_supplement_record">order_supplement_record</a></td>
+      <td>客服补充记录</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">53</td>
       <td><a href="#order_third_relation">order_third_relation</a></td>
       <td>订单关系表</td>
      </tr>
      <tr>
-      <td style="text-align:center;">52</td>
+      <td style="text-align:center;">54</td>
       <td><a href="#pf_feedback_type">pf_feedback_type</a></td>
       <td>pf_feedback_type</td>
      </tr>
      <tr>
-      <td style="text-align:center;">53</td>
+      <td style="text-align:center;">55</td>
       <td><a href="#pushed_delivery_order_ref">pushed_delivery_order_ref</a></td>
       <td>系统骑手推单关联表</td>
      </tr>
      <tr>
-      <td style="text-align:center;">54</td>
+      <td style="text-align:center;">56</td>
       <td><a href="#sheet1">sheet1</a></td>
       <td>sheet1</td>
      </tr>
      <tr>
-      <td style="text-align:center;">55</td>
+      <td style="text-align:center;">57</td>
       <td><a href="#shipment_item">shipment_item</a></td>
       <td>出货子表</td>
      </tr>
      <tr>
-      <td style="text-align:center;">56</td>
+      <td style="text-align:center;">58</td>
+      <td><a href="#shipment_logistics">shipment_logistics</a></td>
+      <td>发货单物流信息</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">59</td>
       <td><a href="#special_order_task">special_order_task</a></td>
       <td>special_order_task</td>
      </tr>
      <tr>
-      <td style="text-align:center;">57</td>
+      <td style="text-align:center;">60</td>
       <td><a href="#tbl_test_order">tbl_test_order</a></td>
       <td>tbl_test_order</td>
      </tr>
      <tr>
-      <td style="text-align:center;">58</td>
+      <td style="text-align:center;">61</td>
       <td><a href="#temp_test_table">temp_test_table</a></td>
       <td>temp_test_table</td>
      </tr>
      <tr>
-      <td style="text-align:center;">59</td>
+      <td style="text-align:center;">62</td>
       <td><a href="#test_logistics_info">test_logistics_info</a></td>
       <td>订单出货表</td>
      </tr>
      <tr>
-      <td style="text-align:center;">60</td>
+      <td style="text-align:center;">63</td>
       <td><a href="#test_temp">test_temp</a></td>
       <td>收银台订单结算账单</td>
      </tr>
@@ -1135,7 +1150,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">商品id（加油订单为加油站id）；</td>
+      <td align="center">商品id（加油订单为加油站id）；xqxc_goods.goods_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">5</td>
@@ -1686,7 +1701,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">秀友系统的区域id；</td>
+      <td align="center">秀友系统的区域id</td>
      </tr>
     </tbody>
    </table><a name="earnings_service_order"></a>
@@ -1734,7 +1749,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">订单编号；</td>
+      <td align="center">订单编号；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -2208,7 +2223,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">索赔所属店铺ID；</td>
+      <td align="center">索赔所属店铺ID；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">5</td>
@@ -2502,7 +2517,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">8</td>
@@ -2513,7 +2528,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">9</td>
@@ -3063,7 +3078,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">活动id；</td>
+      <td align="center">活动id；xqxc_marketing.activity_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">59</td>
@@ -3375,7 +3390,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">4</td>
@@ -3500,7 +3515,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">5</td>
@@ -3522,7 +3537,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">商品id；</td>
+      <td align="center">商品id；xqxc_goods.goods_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">7</td>
@@ -3533,7 +3548,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">skuid；</td>
+      <td align="center">skuid；xqxc_goods.sku_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">8</td>
@@ -3830,7 +3845,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">活动id；</td>
+      <td align="center">活动id；xqxc_marketing.activity_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">35</td>
@@ -4065,7 +4080,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -4388,7 +4403,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">6</td>
@@ -4487,7 +4502,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">15</td>
@@ -4840,7 +4855,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -5101,7 +5116,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">7</td>
@@ -5112,7 +5127,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">skuId；</td>
+      <td align="center">skuId；xqxc_goods.sku_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">8</td>
@@ -5123,7 +5138,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">商品id；</td>
+      <td align="center">商品id；xqxc_goods.goods_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">9</td>
@@ -5272,7 +5287,7 @@
       <td style="text-align:center;">22</td>
       <td>err_message</td>
       <td align="center">varchar</td>
-      <td align="center">255</td>
+      <td align="center">2048</td>
       <td align="center">0</td>
       <td align="center">Y</td>
       <td align="center">N</td>
@@ -5288,7 +5303,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">24</td>
@@ -5369,7 +5384,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">订单号；</td>
+      <td align="center">订单号；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -5722,7 +5737,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -5891,7 +5906,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">同城订单id，关联order_info的id；</td>
+      <td align="center">同城订单id，关联order_info的id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -5957,7 +5972,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">9</td>
@@ -6177,7 +6192,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">区域id；</td>
+      <td align="center">区域id</td>
      </tr>
     </tbody>
    </table><a name="order_delivery_common_config"></a>
@@ -7845,7 +7860,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -7878,7 +7893,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">6</td>
@@ -8355,7 +8370,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">11</td>
@@ -8773,7 +8788,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">省id；</td>
+      <td align="center">省id</td>
      </tr>
      <tr>
       <td style="text-align:center;">49</td>
@@ -8784,7 +8799,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">市id；</td>
+      <td align="center">市id</td>
      </tr>
      <tr>
       <td style="text-align:center;">50</td>
@@ -8795,7 +8810,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">区域id；</td>
+      <td align="center">区域id</td>
      </tr>
      <tr>
       <td style="text-align:center;">51</td>
@@ -9558,7 +9573,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">7</td>
@@ -9569,7 +9584,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">8</td>
@@ -9591,7 +9606,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">商品id；</td>
+      <td align="center">商品id；xqxc_goods.goods_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">10</td>
@@ -9635,7 +9650,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">商品id；</td>
+      <td align="center">商品id；xqxc_goods.sku_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">14</td>
@@ -9987,7 +10002,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">活动id；</td>
+      <td align="center">活动id；xqxc_marketing.activity_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">46</td>
@@ -10420,7 +10435,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -10442,7 +10457,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">活动id；</td>
+      <td align="center">活动id；xqxc_marketing.activity_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">5</td>
@@ -10556,7 +10571,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">4</td>
@@ -10589,7 +10604,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺ID；</td>
+      <td align="center">店铺ID；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">7</td>
@@ -10600,7 +10615,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">商品id；</td>
+      <td align="center">商品id；xqxc_goods.goods_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">8</td>
@@ -10611,7 +10626,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">商品id；</td>
+      <td align="center">商品id；xqxc_goods.sku_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">9</td>
@@ -10846,7 +10861,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -10982,7 +10997,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">5</td>
@@ -10993,7 +11008,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">6</td>
@@ -11184,7 +11199,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单号；</td>
+      <td align="center">订单号；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">5</td>
@@ -11353,7 +11368,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">5</td>
@@ -11364,7 +11379,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">6</td>
@@ -11680,7 +11695,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center"></td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">3</td>
@@ -11908,7 +11923,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">4</td>
@@ -11952,7 +11967,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">8</td>
@@ -12229,6 +12244,17 @@
       <td align="center"></td>
       <td align="center">模板id；</td>
      </tr>
+     <tr>
+      <td style="text-align:center;">33</td>
+      <td>deliver_remark</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">C端显示备注</td>
+     </tr>
     </tbody>
    </table><a name="order_shipment_node"></a>
    <div style="margin-top:30px;" class="table_name">
@@ -12433,7 +12459,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">4</td>
@@ -12444,7 +12470,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">5</td>
@@ -12524,6 +12550,201 @@
       <td align="center">创建时间</td>
      </tr>
     </tbody>
+   </table><a name="order_supplement_attach"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：order_supplement_attach</b>
+   </div>
+   <div>
+    说明：客服补充记录附件表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>supplement_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">补充记录Id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>file_name</td>
+      <td align="center">varchar</td>
+      <td align="center">512</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">文件名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>file_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">文件类型(图片;视频)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+    </tbody>
+   </table><a name="order_supplement_record"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：order_supplement_record</b>
+   </div>
+   <div>
+    说明：客服补充记录
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>record_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">售后则是售后id后者其他业务ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>record_type</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">补充记录类型 0 售后</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>content</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">内容</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>create_user_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>gmt_modified</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+    </tbody>
    </table><a name="order_third_relation"></a>
    <div style="margin-top:30px;" class="table_name">
     <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：order_third_relation</b>
@@ -12558,7 +12779,7 @@
       <td align="center">N</td>
       <td align="center">Y</td>
       <td align="center"></td>
-      <td align="center">订单号；</td>
+      <td align="center">订单号；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">2</td>
@@ -13190,7 +13411,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">订单id；</td>
+      <td align="center">订单id；xqxc_order.order_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">5</td>
@@ -13212,7 +13433,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">店铺id；</td>
+      <td align="center">店铺id；xqxc_merchant.shop_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">7</td>
@@ -13234,7 +13455,7 @@
       <td align="center">Y</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">商品id；</td>
+      <td align="center">商品id；xqxc_goods.goods_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">9</td>
@@ -13256,7 +13477,7 @@
       <td align="center">N</td>
       <td align="center">N</td>
       <td align="center">0</td>
-      <td align="center">SKU id；</td>
+      <td align="center">SKU id；xqxc_goods.sku_info</td>
      </tr>
      <tr>
       <td style="text-align:center;">11</td>
@@ -13455,6 +13676,131 @@
       <td align="center">N</td>
       <td align="center">0</td>
       <td align="center">数量</td>
+     </tr>
+    </tbody>
+   </table><a name="shipment_logistics"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：shipment_logistics</b>
+   </div>
+   <div>
+    说明：发货单物流信息
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>shipment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">订单id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>express_no</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">物流单号, 发货快递单号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>logistics_create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">发货时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>logistics_code</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">物流公司编码(EMS 顺丰 圆通 申通 等)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>logistics_company</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">物流公司(EMS 顺丰 圆通 申通 等)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>remark</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">物流备注</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>gmt_modify</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">记录更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
      </tr>
     </tbody>
    </table><a name="special_order_task"></a>
