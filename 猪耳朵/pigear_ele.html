@@ -1,2693 +1,2675 @@
-<html lang="zh">
- <head></head>
+<html lang="zh"> 
+ <head></head> 
  <body style="text-align:center;">
-  ﻿
-  <title>pigear_ele文档</title>
-  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style>
-  <div style="width:800px; margin:20px auto; text-align:left;">
-   <a name="index"></a>
-   <h2 style="text-align:center; line-height:50px;">pigear_ele文档</h2>
+   ﻿ 
+  <title>pigear_ele文档</title> 
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style> 
+  <div style="width:800px; margin:20px auto; text-align:left;"> <a name="index"></a> 
+   <h2 style="text-align:center; line-height:50px;">pigear_ele文档</h2> 
+   <div> <b>数据库名：pigear_ele</b> 
+    <br><b>文档版本：0.0.1-SNAPSHOT</b> 
+    <br><b>文档描述：pigear_ele文档生成</b> 
+    <br> 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>表名</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td><a href="#ele_ear_test_user">ele_ear_test_user</a></td> 
+      <td>ele_ear_test_user</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td><a href="#ele_merchant_auth_info">ele_merchant_auth_info</a></td> 
+      <td>饿了么商户授权表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td><a href="#ele_msg_record">ele_msg_record</a></td> 
+      <td>饿了么消息记录表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td><a href="#ele_order_address">ele_order_address</a></td> 
+      <td>饿了配送订单地址信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td><a href="#ele_order_cancel_record">ele_order_cancel_record</a></td> 
+      <td>取消订单记录表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td><a href="#ele_order_extra_info">ele_order_extra_info</a></td> 
+      <td>饿了么订单附加信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td><a href="#ele_order_goods_extra_info">ele_order_goods_extra_info</a></td> 
+      <td>上游订单所属商品附加表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td><a href="#ele_order_info">ele_order_info</a></td> 
+      <td>饿了么订单信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td><a href="#ele_order_op_log">ele_order_op_log</a></td> 
+      <td>ELEME订单操作日志表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td><a href="#ele_shop_auth_info">ele_shop_auth_info</a></td> 
+      <td>饿了么店铺授权表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td><a href="#ele_shop_info">ele_shop_info</a></td> 
+      <td>饿了么店铺信息表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td><a href="#mtwm_shop_goods_info">mtwm_shop_goods_info</a></td> 
+      <td>美团外卖门店：商品信息</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td><a href="#od_mt_order_data">od_mt_order_data</a></td> 
+      <td>美团数据表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td><a href="#od_mt_spider_data">od_mt_spider_data</a></td> 
+      <td>美团爬虫数据表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td><a href="#od_mt_spider_data_20220217">od_mt_spider_data_20220217</a></td> 
+      <td>美团爬虫数据表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td><a href="#order_info_update_record">order_info_update_record</a></td> 
+      <td>订单信息修改记录</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_ear_test_user"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_ear_test_user</b> 
+   </div> 
    <div>
-    <b>数据库名：pigear_ele</b>
-    <br><b>文档版本：0.0.1-SNAPSHOT</b>
-    <br><b>文档描述：pigear_ele文档生成</b>
-    <br>
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>表名</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td><a href="#ele_ear_test_user">ele_ear_test_user</a></td>
-      <td>ele_ear_test_user</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td><a href="#ele_merchant_auth_info">ele_merchant_auth_info</a></td>
-      <td>饿了么商户授权表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td><a href="#ele_msg_record">ele_msg_record</a></td>
-      <td>饿了么消息记录表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td><a href="#ele_order_address">ele_order_address</a></td>
-      <td>饿了配送订单地址信息表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td><a href="#ele_order_cancel_record">ele_order_cancel_record</a></td>
-      <td>取消订单记录表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td><a href="#ele_order_extra_info">ele_order_extra_info</a></td>
-      <td>饿了么订单附加信息表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td><a href="#ele_order_goods_extra_info">ele_order_goods_extra_info</a></td>
-      <td>上游订单所属商品附加表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td><a href="#ele_order_info">ele_order_info</a></td>
-      <td>饿了么订单信息表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td><a href="#ele_order_op_log">ele_order_op_log</a></td>
-      <td>ELEME订单操作日志表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">10</td>
-      <td><a href="#ele_shop_auth_info">ele_shop_auth_info</a></td>
-      <td>饿了么店铺授权表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">11</td>
-      <td><a href="#ele_shop_info">ele_shop_info</a></td>
-      <td>饿了么店铺信息表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">12</td>
-      <td><a href="#mtwm_shop_goods_info">mtwm_shop_goods_info</a></td>
-      <td>美团外卖门店：商品信息</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">13</td>
-      <td><a href="#od_mt_order_data">od_mt_order_data</a></td>
-      <td>美团数据表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">14</td>
-      <td><a href="#od_mt_spider_data">od_mt_spider_data</a></td>
-      <td>美团爬虫数据表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">15</td>
-      <td><a href="#od_mt_spider_data_20220217">od_mt_spider_data_20220217</a></td>
-      <td>美团爬虫数据表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">16</td>
-      <td><a href="#order_info_update_record">order_info_update_record</a></td>
-      <td>订单信息修改记录</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_ear_test_user"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_ear_test_user</b>
-   </div>
+     说明： 
+   </div> 
    <div>
-    说明：
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_merchant_auth_info"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_merchant_auth_info</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">ID</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>name</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-    </tbody>
-   </table><a name="ele_merchant_auth_info"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_merchant_auth_info</b>
-   </div>
+     说明：饿了么商户授权表 
+   </div> 
    <div>
-    说明：饿了么商户授权表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_source_code</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单渠道Code</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么商户ID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>user_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">256</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么商户账号名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>merchant_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">11</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么商户类型枚举 单店-SINGLE 连锁店(多店)-MULTI</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>auth_status</td> 
+      <td align="center">varchar</td> 
+      <td align="center">11</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么商户授权状态枚举 已授权-AUTHED 未授权-UNAUTHED 授权过期-AUTHED_TIME_OUT</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>token</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么商户Token</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>expire_time</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">饿了么商户Token过期时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>gmt_modified</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_msg_record"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_msg_record</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键ID</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_source_code</td>
-      <td align="center">varchar</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单渠道Code</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>user_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么商户ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>user_name</td>
-      <td align="center">varchar</td>
-      <td align="center">256</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么商户账号名称</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>merchant_type</td>
-      <td align="center">varchar</td>
-      <td align="center">11</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么商户类型枚举 单店-SINGLE 连锁店(多店)-MULTI</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>auth_status</td>
-      <td align="center">varchar</td>
-      <td align="center">11</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么商户授权状态枚举 已授权-AUTHED 未授权-UNAUTHED 授权过期-AUTHED_TIME_OUT</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>token</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么商户Token</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>expire_time</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">饿了么商户Token过期时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td>gmt_modified</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">修改时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">10</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">创建时间</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_msg_record"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_msg_record</b>
-   </div>
+     说明：饿了么消息记录表 
+   </div> 
    <div>
-    说明：饿了么消息记录表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么订单ID；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>request_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>type</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">消息类型</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>cmd</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">消息cmd(零售有的消息没有type)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>shop_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺ID；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>message</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">消息体</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>msg_json</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">完整消息</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>msg_send_time</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">时间戳(默认取message的updateTime,没有取消息发送时间)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">消息创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_order_address"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_address</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">id</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么订单ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>request_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>type</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">0</td>
-      <td align="center">消息类型</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>cmd</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">消息cmd(零售有的消息没有type)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>shop_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>message</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">消息体</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>msg_json</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">完整消息</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td>msg_send_time</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">时间戳(默认取message的updateTime,没有取消息发送时间)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">10</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">消息创建时间</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_order_address"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_address</b>
-   </div>
+     说明：饿了配送订单地址信息表 
+   </div> 
    <div>
-    说明：饿了配送订单地址信息表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么订单ID；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>order_source</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单来源</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>province_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">省</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>city_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">地级市</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>district_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">县级市或区</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>shipper_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">发货人姓名</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>shipper_phone</td> 
+      <td align="center">varchar</td> 
+      <td align="center">128</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">发货人联系电话</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>shipper_longitude</td> 
+      <td align="center">decimal</td> 
+      <td align="center">11</td> 
+      <td align="center">6</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">发货人经度(高德地图坐标系)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>shipper_latitude</td> 
+      <td align="center">decimal</td> 
+      <td align="center">11</td> 
+      <td align="center">6</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">发货人纬度(高德地图坐标系)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>shipper_addr</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">发货人地址</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>phone_list</td> 
+      <td align="center">varchar</td> 
+      <td align="center">128</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">顾客联系电话(若用户匿名下单, 返回保护小号)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>secret_phone_expire_time</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">保护小号失效时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>consignee_phones</td> 
+      <td align="center">varchar</td> 
+      <td align="center">128</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">顾客联系电话(真实手机号隐藏中间四位)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>consignee_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单收货人姓名</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>consignee_longitude</td> 
+      <td align="center">decimal</td> 
+      <td align="center">11</td> 
+      <td align="center">6</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">收货地址经度(高德地图坐标系)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>consignee_latitude</td> 
+      <td align="center">decimal</td> 
+      <td align="center">11</td> 
+      <td align="center">6</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">收货地址纬度(高德地图坐标系)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>consignee_addr</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">顾客送餐地址</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">20</td> 
+      <td>gmt_modified</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">更新时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_order_cancel_record"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_cancel_record</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么订单ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>order_source</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单来源</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>province_name</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">省</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>city_name</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">地级市</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>district_name</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">县级市或区</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>shipper_name</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">发货人姓名</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>shipper_phone</td>
-      <td align="center">varchar</td>
-      <td align="center">128</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">发货人联系电话</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td>shipper_longitude</td>
-      <td align="center">decimal</td>
-      <td align="center">11</td>
-      <td align="center">6</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">发货人经度(高德地图坐标系)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">10</td>
-      <td>shipper_latitude</td>
-      <td align="center">decimal</td>
-      <td align="center">11</td>
-      <td align="center">6</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">发货人纬度(高德地图坐标系)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">11</td>
-      <td>shipper_addr</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">发货人地址</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">12</td>
-      <td>phone_list</td>
-      <td align="center">varchar</td>
-      <td align="center">128</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">顾客联系电话(若用户匿名下单, 返回保护小号)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">13</td>
-      <td>secret_phone_expire_time</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">保护小号失效时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">14</td>
-      <td>consignee_phones</td>
-      <td align="center">varchar</td>
-      <td align="center">128</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">顾客联系电话(真实手机号隐藏中间四位)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">15</td>
-      <td>consignee_name</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单收货人姓名</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">16</td>
-      <td>consignee_longitude</td>
-      <td align="center">decimal</td>
-      <td align="center">11</td>
-      <td align="center">6</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">收货地址经度(高德地图坐标系)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">17</td>
-      <td>consignee_latitude</td>
-      <td align="center">decimal</td>
-      <td align="center">11</td>
-      <td align="center">6</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">收货地址纬度(高德地图坐标系)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">18</td>
-      <td>consignee_addr</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">顾客送餐地址</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">19</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">创建时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">20</td>
-      <td>gmt_modified</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">更新时间</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_order_cancel_record"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_cancel_record</b>
-   </div>
+     说明：取消订单记录表 
+   </div> 
    <div>
-    说明：取消订单记录表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么订单ID；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>op_platform</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">操作平台(ELE=饿了么 EAR=猪耳朵 ELE_RETAIL=饿了么零售 MT_SPIDER=美团特别版)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>cancel_type</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单取消类型</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>cancel_note</td> 
+      <td align="center">varchar</td> 
+      <td align="center">128</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">取消说明</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>reason</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">取消原因</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>update_time</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">时间戳(默认取message的updateTime,没有取消息发送时间)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_order_extra_info"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_extra_info</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么订单ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>op_platform</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">操作平台(ELE=饿了么 EAR=猪耳朵 ELE_RETAIL=饿了么零售 MT_SPIDER=美团特别版)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>cancel_type</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单取消类型</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>cancel_note</td>
-      <td align="center">varchar</td>
-      <td align="center">128</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">取消说明</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>reason</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">取消原因</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>update_time</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">时间戳(默认取message的updateTime,没有取消息发送时间)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">创建时间</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_order_extra_info"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_extra_info</b>
-   </div>
+     说明：饿了么订单附加信息表 
+   </div> 
    <div>
-    说明：饿了么订单附加信息表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么订单ID；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>order_source</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单来源</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么店铺ID；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>groups</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单商品信息</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>order_json</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单信息</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>gmt_modified</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_order_goods_extra_info"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_goods_extra_info</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么订单ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>order_source</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单来源</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>shop_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么店铺ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>groups</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单商品信息</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>order_json</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单信息</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">创建时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>gmt_modified</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">修改时间</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_order_goods_extra_info"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_goods_extra_info</b>
-   </div>
+     说明：上游订单所属商品附加表 
+   </div> 
    <div>
-    说明：上游订单所属商品附加表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_source</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单来源：枚举：OpPlatformEnum：饿了么：ELE、饿了么零售：ELE_RETAIL、猪耳朵：EAR、鲜花蛋糕(美团特别版)：MT_SPIDER、美团外卖(冲突&amp;非冲突)：MTWM</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>order_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">上游订单ID；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">上游店铺ID；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>goods_json</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">商品信息</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>gmt_modified</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_order_info"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_info</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_source</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单来源：枚举：OpPlatformEnum：饿了么：ELE、饿了么零售：ELE_RETAIL、猪耳朵：EAR、鲜花蛋糕(美团特别版)：MT_SPIDER、美团外卖(冲突&amp;非冲突)：MTWM</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>order_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">上游订单ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>shop_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">上游店铺ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>goods_json</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">商品信息</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">创建时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>gmt_modified</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">修改时间</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_order_info"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_info</b>
-   </div>
+     说明：饿了么订单信息表 
+   </div> 
    <div>
-    说明：饿了么订单信息表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么订单ID；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>created_at</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">下单时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>active_at</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">接单时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>goods_category</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">猪耳朵店铺物品品类名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>weight</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">物品重量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>deliver_fee</td> 
+      <td align="center">double</td> 
+      <td align="center">11</td> 
+      <td align="center">1</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户实际支付配送费(单位：元)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>description</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单备注</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>book</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否预订单(1 是 0 不是)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>deliver_time</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">预计送达时间(预订单的预计送达时间)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>pigear_shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">猪耳朵店铺ID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺ID(渠道饿了么/零售/美团店铺ID)；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>shop_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>day_sn</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺当日订单流水号</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>status</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么订单状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>ele_retail_order_status</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么零售订单状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>mt_order_status</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">美团订单状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>pigear_order_status</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">猪耳朵订单状态(CONFIRMING=待商家接单 ORDERING=待商家发单 ORDERED=已发单 CANCELLED=已取消 PICKING=待商家拣货 PICK_UP=待顾客取件 FINISHED=已完成 )</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td>refund_status</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么退单状态(noRefund=未申请退单 applied=用户申请退单 rejected=店铺拒绝退单 arbitrating=客服仲裁中 failed=退单失败 successful=退单成功)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">20</td> 
+      <td>user_id_str</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">下单用户的Id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">21</td> 
+      <td>total_price</td> 
+      <td align="center">double</td> 
+      <td align="center">11</td> 
+      <td align="center">2</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单总价，用户实际支付的金额(单位：元)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">22</td> 
+      <td>original_price</td> 
+      <td align="center">double</td> 
+      <td align="center">11</td> 
+      <td align="center">2</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单原始价格(单位：元)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">23</td> 
+      <td>income</td> 
+      <td align="center">double</td> 
+      <td align="center">11</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺实收(单位：元)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">24</td> 
+      <td>cancel_order_description</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户取消原因</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">25</td> 
+      <td>cancel_order_created_at</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户申请取消时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">26</td> 
+      <td>pick_up_code</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">用户到店自提取货码</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">27</td> 
+      <td>pick_up_time</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">到店自取时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">28</td> 
+      <td>order_business_type</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">订单业务类型(0外卖单,1到店自取订单,2企业到店买单)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">29</td> 
+      <td>order_source_tag</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单来源标签(ELEME=饿了么订单 STAR_PICK=饿了么星选 KOUBEI_APP=口碑APP KOUBEI_ALIPAY=支付宝中的口碑 WECHAT_ORDER=微信ka小程序)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">30</td> 
+      <td>order_source</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">ELE</td> 
+      <td align="center">订单来源：(ELE=饿了么 ELE_RETAIL=饿了么零售)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">31</td> 
+      <td>order_cancel_type</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单取消类型(用户申请取消=20 商户拒绝取消单=22 客服仲裁取消单申请无效=26 )</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">32</td> 
+      <td>auth_business_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">美团授权业务ID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">33</td> 
+      <td>qr_code_value</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">二维码code</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">34</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">35</td> 
+      <td>gmt_modified</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">更新时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_order_op_log"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_op_log</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么订单ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>created_at</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">下单时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>active_at</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">接单时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>goods_category</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">猪耳朵店铺物品品类名称</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>weight</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">物品重量</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>deliver_fee</td>
-      <td align="center">double</td>
-      <td align="center">11</td>
-      <td align="center">1</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">用户实际支付配送费(单位：元)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>description</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单备注</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td>book</td>
-      <td align="center">tinyint</td>
-      <td align="center">4</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否预订单(1 是 0 不是)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">10</td>
-      <td>deliver_time</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">预计送达时间(预订单的预计送达时间)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">11</td>
-      <td>pigear_shop_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">猪耳朵店铺ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">12</td>
-      <td>shop_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺ID(渠道饿了么/零售/美团店铺ID)；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">13</td>
-      <td>shop_name</td>
-      <td align="center">varchar</td>
-      <td align="center">255</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺名称</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">14</td>
-      <td>day_sn</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺当日订单流水号</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">15</td>
-      <td>status</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么订单状态</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">16</td>
-      <td>ele_retail_order_status</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么零售订单状态</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">17</td>
-      <td>mt_order_status</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">美团订单状态</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">18</td>
-      <td>pigear_order_status</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">猪耳朵订单状态(CONFIRMING=待商家接单 ORDERING=待商家发单 ORDERED=已发单 CANCELLED=已取消 PICKING=待商家拣货 PICK_UP=待顾客取件 FINISHED=已完成 )</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">19</td>
-      <td>refund_status</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么退单状态(noRefund=未申请退单 applied=用户申请退单 rejected=店铺拒绝退单 arbitrating=客服仲裁中 failed=退单失败 successful=退单成功)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">20</td>
-      <td>user_id_str</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">下单用户的Id</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">21</td>
-      <td>total_price</td>
-      <td align="center">double</td>
-      <td align="center">11</td>
-      <td align="center">2</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单总价，用户实际支付的金额(单位：元)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">22</td>
-      <td>original_price</td>
-      <td align="center">double</td>
-      <td align="center">11</td>
-      <td align="center">2</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单原始价格(单位：元)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">23</td>
-      <td>income</td>
-      <td align="center">double</td>
-      <td align="center">11</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺实收(单位：元)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">24</td>
-      <td>cancel_order_description</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">用户取消原因</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">25</td>
-      <td>cancel_order_created_at</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">用户申请取消时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">26</td>
-      <td>pick_up_code</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">用户到店自提取货码</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">27</td>
-      <td>pick_up_time</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">到店自取时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">28</td>
-      <td>order_business_type</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center">0</td>
-      <td align="center">订单业务类型(0外卖单,1到店自取订单,2企业到店买单)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">29</td>
-      <td>order_source_tag</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单来源标签(ELEME=饿了么订单 STAR_PICK=饿了么星选 KOUBEI_APP=口碑APP KOUBEI_ALIPAY=支付宝中的口碑 WECHAT_ORDER=微信ka小程序)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">30</td>
-      <td>order_source</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">ELE</td>
-      <td align="center">订单来源：(ELE=饿了么 ELE_RETAIL=饿了么零售)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">31</td>
-      <td>order_cancel_type</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单取消类型(用户申请取消=20 商户拒绝取消单=22 客服仲裁取消单申请无效=26 )</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">32</td>
-      <td>auth_business_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">美团授权业务ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">33</td>
-      <td>qr_code_value</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">二维码code</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">34</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">创建时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">35</td>
-      <td>gmt_modified</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">更新时间</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_order_op_log"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_order_op_log</b>
-   </div>
+     说明：ELEME订单操作日志表 
+   </div> 
    <div>
-    说明：ELEME订单操作日志表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么订单id；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>status</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">状态(订单流转的所有状态)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>is_delivery</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否是配送状态(0=否 1=是)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>op_platform</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">操作平台(ELE=饿了么 EAR=猪耳朵 ELE_RETAIL=饿了么零售 MT_SPIDER=美团特别版)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>content</td> 
+      <td align="center">varchar</td> 
+      <td align="center">256</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">操作内容</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>op_account</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">操作人账号</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>op_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">操作人名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_shop_auth_info"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_shop_auth_info</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么订单id；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>status</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">状态(订单流转的所有状态)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>is_delivery</td>
-      <td align="center">tinyint</td>
-      <td align="center">4</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">0</td>
-      <td align="center">是否是配送状态(0=否 1=是)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>op_platform</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">操作平台(ELE=饿了么 EAR=猪耳朵 ELE_RETAIL=饿了么零售 MT_SPIDER=美团特别版)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>content</td>
-      <td align="center">varchar</td>
-      <td align="center">256</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">操作内容</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>op_account</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">操作人账号</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>op_name</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">操作人名称</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">创建时间</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_shop_auth_info"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_shop_auth_info</b>
-   </div>
+     说明：饿了么店铺授权表 
+   </div> 
    <div>
-    说明：饿了么店铺授权表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_source_code</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单渠道Code</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>user_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么商户ID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>ele_shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">饿了么店铺ID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>pigear_shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">猪耳朵店铺ID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>pigear_shop_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">256</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">猪耳朵店铺名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>gmt_modified</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>delivery_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">NOSELF_DELIVERY</td> 
+      <td align="center">配送类型，SELF_DELIVERY-自配送 NOSELF_DELIVERY-非自配送【说明order_source_code=MT_SPIDER时该字段无效】</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>epid</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">order_source_code=MT_SPIDER时必填</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>business_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">美团外卖业务ID order_source_code=MTWM时必填；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>app_auth_token</td> 
+      <td align="center">varchar</td> 
+      <td align="center">256</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">美团外卖店铺授权Token order_source_code=MTWM时必填</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="ele_shop_info"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_shop_info</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键ID</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_source_code</td>
-      <td align="center">varchar</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单渠道Code</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>user_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么商户ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>ele_shop_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">饿了么店铺ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>pigear_shop_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">猪耳朵店铺ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>pigear_shop_name</td>
-      <td align="center">varchar</td>
-      <td align="center">256</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">猪耳朵店铺名称</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>gmt_modified</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">修改时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">创建时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td>delivery_type</td>
-      <td align="center">varchar</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">NOSELF_DELIVERY</td>
-      <td align="center">配送类型，SELF_DELIVERY-自配送 NOSELF_DELIVERY-非自配送【说明order_source_code=MT_SPIDER时该字段无效】</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">10</td>
-      <td>epid</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">order_source_code=MT_SPIDER时必填</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">11</td>
-      <td>business_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">美团外卖业务ID order_source_code=MTWM时必填；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">12</td>
-      <td>app_auth_token</td>
-      <td align="center">varchar</td>
-      <td align="center">256</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">美团外卖店铺授权Token order_source_code=MTWM时必填</td>
-     </tr>
-    </tbody>
-   </table><a name="ele_shop_info"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：ele_shop_info</b>
-   </div>
+     说明：饿了么店铺信息表 
+   </div> 
    <div>
-    说明：饿了么店铺信息表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_source_code</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单渠道Code</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺ID；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>address_text</td> 
+      <td align="center">varchar</td> 
+      <td align="center">100</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺地址</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>province_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺所在省</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>city_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺所在地级市</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>district_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺所在县级市或区</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>busy_level</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺营业状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>city_id</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">城市Id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>city_code</td> 
+      <td align="center">varchar</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">城市区号</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>deliver_geo_json</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">配送范围</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>deliver_spent</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">2周内的平均送餐时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>description</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺描述</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>image_url</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1023</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">15</td> 
+      <td>invoice</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否支持开发票(2 纸票 3 扫码开票 4 商家开电票 5 不开票（无开票配置）)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">16</td> 
+      <td>invoice_min_amount</td> 
+      <td align="center">decimal</td> 
+      <td align="center">11</td> 
+      <td align="center">1</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">支持的最小发票金额</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">17</td> 
+      <td>is_bookable</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否支持预定(n=0表示不支持预定,7&gt;n&gt;=1表示支持n天内的预定)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">18</td> 
+      <td>open_time_bitmap</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">营业时间bitmap</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">19</td> 
+      <td>book_time_bitmap</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">预定时间bitmap</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">20</td> 
+      <td>deliver_times</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">预定时间选项的列表 List<string></string></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">21</td> 
+      <td>is_open</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否正在营业详情(0 未营业 1 正在营业)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">22</td> 
+      <td>is_phone_hidden</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否隐藏电话号码详情(0 不隐藏电话号码，1 隐藏电话号码)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">23</td> 
+      <td>is_premium</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否品牌馆餐厅详情(0 不是品牌餐厅，1 是品牌餐厅)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">24</td> 
+      <td>latitude</td> 
+      <td align="center">decimal</td> 
+      <td align="center">11</td> 
+      <td align="center">6</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺地址坐标-纬度</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">25</td> 
+      <td>longitude</td> 
+      <td align="center">decimal</td> 
+      <td align="center">11</td> 
+      <td align="center">6</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺地址坐标-经度</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">26</td> 
+      <td>mobile</td> 
+      <td align="center">varchar</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺接收饿了么短信的手机号码</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">27</td> 
+      <td>num_ratings</td> 
+      <td align="center">varchar</td> 
+      <td align="center">100</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺评价的列表详情，依次为1-5星评价的数目 List<short></short></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">28</td> 
+      <td>online_payment</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否支持在线支付，0:不支持，1:支持</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">29</td> 
+      <td>phones</td> 
+      <td align="center">varchar</td> 
+      <td align="center">100</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺的联系电话的列表 List<string></string></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">30</td> 
+      <td>promotion_info</td> 
+      <td align="center">varchar</td> 
+      <td align="center">255</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺促销文案信息</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">31</td> 
+      <td>recent_food_popularity</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">最近一个月美食销量</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">32</td> 
+      <td>name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">100</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺名称</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">33</td> 
+      <td>serving_time</td> 
+      <td align="center">varchar</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">营业时间的列表 List<string></string></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">34</td> 
+      <td>support_online</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否支持在线订餐</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">35</td> 
+      <td>packing_fee</td> 
+      <td align="center">decimal</td> 
+      <td align="center">11</td> 
+      <td align="center">1</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单打包费详情。对于该店铺的每张订单，如果有店铺订单打包费，则采用该值；如果没有，则根据订单中的菜品来决定打包费。</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">36</td> 
+      <td>open_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">256</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">店铺绑定的外部ID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">37</td> 
+      <td>online_refund</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否支持在线退单详情 true-&gt;支持；false-&gt;不支持；(商家不设置，默认支持）</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">38</td> 
+      <td>is_new_retail_shop</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">是否新零售迁移店铺</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">39</td> 
+      <td>im_status</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">IM开关设置状态</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">40</td> 
+      <td>gmt_modified</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">41</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">42</td> 
+      <td>is_delete</td> 
+      <td align="center">tinyint</td> 
+      <td align="center">4</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">是否删除（0不删，1已删）</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="mtwm_shop_goods_info"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：mtwm_shop_goods_info</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键ID</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_source_code</td>
-      <td align="center">varchar</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单渠道Code</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>shop_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>address_text</td>
-      <td align="center">varchar</td>
-      <td align="center">100</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺地址</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>province_name</td>
-      <td align="center">varchar</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺所在省</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>city_name</td>
-      <td align="center">varchar</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺所在地级市</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>district_name</td>
-      <td align="center">varchar</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺所在县级市或区</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>busy_level</td>
-      <td align="center">varchar</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺营业状态</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td>city_id</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">城市Id</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">10</td>
-      <td>city_code</td>
-      <td align="center">varchar</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">城市区号</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">11</td>
-      <td>deliver_geo_json</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">配送范围</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">12</td>
-      <td>deliver_spent</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">2周内的平均送餐时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">13</td>
-      <td>description</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺描述</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">14</td>
-      <td>image_url</td>
-      <td align="center">varchar</td>
-      <td align="center">1023</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">15</td>
-      <td>invoice</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否支持开发票(2 纸票 3 扫码开票 4 商家开电票 5 不开票（无开票配置）)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">16</td>
-      <td>invoice_min_amount</td>
-      <td align="center">decimal</td>
-      <td align="center">11</td>
-      <td align="center">1</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">支持的最小发票金额</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">17</td>
-      <td>is_bookable</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否支持预定(n=0表示不支持预定,7&gt;n&gt;=1表示支持n天内的预定)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">18</td>
-      <td>open_time_bitmap</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">营业时间bitmap</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">19</td>
-      <td>book_time_bitmap</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">预定时间bitmap</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">20</td>
-      <td>deliver_times</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">预定时间选项的列表 List<string></string></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">21</td>
-      <td>is_open</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否正在营业详情(0 未营业 1 正在营业)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">22</td>
-      <td>is_phone_hidden</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否隐藏电话号码详情(0 不隐藏电话号码，1 隐藏电话号码)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">23</td>
-      <td>is_premium</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否品牌馆餐厅详情(0 不是品牌餐厅，1 是品牌餐厅)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">24</td>
-      <td>latitude</td>
-      <td align="center">decimal</td>
-      <td align="center">11</td>
-      <td align="center">6</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺地址坐标-纬度</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">25</td>
-      <td>longitude</td>
-      <td align="center">decimal</td>
-      <td align="center">11</td>
-      <td align="center">6</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺地址坐标-经度</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">26</td>
-      <td>mobile</td>
-      <td align="center">varchar</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺接收饿了么短信的手机号码</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">27</td>
-      <td>num_ratings</td>
-      <td align="center">varchar</td>
-      <td align="center">100</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺评价的列表详情，依次为1-5星评价的数目 List<short></short></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">28</td>
-      <td>online_payment</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否支持在线支付，0:不支持，1:支持</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">29</td>
-      <td>phones</td>
-      <td align="center">varchar</td>
-      <td align="center">100</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺的联系电话的列表 List<string></string></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">30</td>
-      <td>promotion_info</td>
-      <td align="center">varchar</td>
-      <td align="center">255</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺促销文案信息</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">31</td>
-      <td>recent_food_popularity</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">最近一个月美食销量</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">32</td>
-      <td>name</td>
-      <td align="center">varchar</td>
-      <td align="center">100</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺名称</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">33</td>
-      <td>serving_time</td>
-      <td align="center">varchar</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">营业时间的列表 List<string></string></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">34</td>
-      <td>support_online</td>
-      <td align="center">tinyint</td>
-      <td align="center">4</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否支持在线订餐</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">35</td>
-      <td>packing_fee</td>
-      <td align="center">decimal</td>
-      <td align="center">11</td>
-      <td align="center">1</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单打包费详情。对于该店铺的每张订单，如果有店铺订单打包费，则采用该值；如果没有，则根据订单中的菜品来决定打包费。</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">36</td>
-      <td>open_id</td>
-      <td align="center">varchar</td>
-      <td align="center">256</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">店铺绑定的外部ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">37</td>
-      <td>online_refund</td>
-      <td align="center">tinyint</td>
-      <td align="center">4</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否支持在线退单详情 true-&gt;支持；false-&gt;不支持；(商家不设置，默认支持）</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">38</td>
-      <td>is_new_retail_shop</td>
-      <td align="center">tinyint</td>
-      <td align="center">4</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">是否新零售迁移店铺</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">39</td>
-      <td>im_status</td>
-      <td align="center">tinyint</td>
-      <td align="center">4</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">IM开关设置状态</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">40</td>
-      <td>gmt_modified</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">修改时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">41</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">创建时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">42</td>
-      <td>is_delete</td>
-      <td align="center">tinyint</td>
-      <td align="center">4</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">0</td>
-      <td align="center">是否删除（0不删，1已删）</td>
-     </tr>
-    </tbody>
-   </table><a name="mtwm_shop_goods_info"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：mtwm_shop_goods_info</b>
-   </div>
+     说明：美团外卖门店：商品信息 
+   </div> 
    <div>
-    说明：美团外卖门店：商品信息
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>pigear_shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">猪耳朵店铺ID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>shop_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">上游门店ID；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；xqxc_merchant.shop_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>origin_spu_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">美团外卖真实SPUID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>mt_spu_id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">美团外卖偏移后SPUID；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>goods_json</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">商品信息：java类MtwmGoodsInfo</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>gmt_modified</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">修改时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="od_mt_order_data"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_mt_order_data</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>pigear_shop_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">猪耳朵店铺ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>shop_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">上游门店ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>origin_spu_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">美团外卖真实SPUID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>mt_spu_id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">美团外卖偏移后SPUID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>goods_json</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">商品信息：java类MtwmGoodsInfo</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">创建时间</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>gmt_modified</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">修改时间</td>
-     </tr>
-    </tbody>
-   </table><a name="od_mt_order_data"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_mt_order_data</b>
-   </div>
+     说明：美团数据表 
+   </div> 
    <div>
-    说明：美团数据表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center">订单ID；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>order_source</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单来源</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>auth_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">授权类型(2=冲突授权 16=非冲突授权)</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>msg_type</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">消息类型</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>data_content</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">消息内容</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="od_mt_spider_data"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_mt_spider_data</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center">0</td>
-      <td align="center">订单ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>order_source</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单来源</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>auth_type</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">授权类型(2=冲突授权 16=非冲突授权)</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>msg_type</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">消息类型</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>data_content</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">消息内容</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">创建时间</td>
-     </tr>
-    </tbody>
-   </table><a name="od_mt_spider_data"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_mt_spider_data</b>
-   </div>
+     说明：美团爬虫数据表 
+   </div> 
    <div>
-    说明：美团爬虫数据表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>epid</td> 
+      <td align="center">varchar</td> 
+      <td align="center">128</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">破解方店铺ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>action_type</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">1-门店绑定成功；2-门店解除绑定；3-订单推送数据；4-取消订单</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>from_type</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">0-美团；1-饿了么</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>data_content</td> 
+      <td align="center">mediumtext</td> 
+      <td align="center">16777215</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">数据内容</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="od_mt_spider_data_20220217"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_mt_spider_data_20220217</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">id</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>epid</td>
-      <td align="center">varchar</td>
-      <td align="center">128</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">破解方店铺ID</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>action_type</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">1-门店绑定成功；2-门店解除绑定；3-订单推送数据；4-取消订单</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>from_type</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">0-美团；1-饿了么</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>data_content</td>
-      <td align="center">mediumtext</td>
-      <td align="center">16777215</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">数据内容</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>gmt_create</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">创建时间</td>
-     </tr>
-    </tbody>
-   </table><a name="od_mt_spider_data_20220217"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：od_mt_spider_data_20220217</b>
-   </div>
+     说明：美团爬虫数据表 
+   </div> 
    <div>
-    说明：美团爬虫数据表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">id</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>epid</td> 
+      <td align="center">varchar</td> 
+      <td align="center">128</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">破解方店铺ID</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>action_type</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">1-门店绑定成功；2-门店解除绑定；3-订单推送数据；4-取消订单</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>from_type</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">0-美团；1-饿了么</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>data_content</td> 
+      <td align="center">mediumtext</td> 
+      <td align="center">16777215</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">数据内容</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="order_info_update_record"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：order_info_update_record</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">id</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>epid</td>
-      <td align="center">varchar</td>
-      <td align="center">128</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">破解方店铺ID</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>action_type</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">1-门店绑定成功；2-门店解除绑定；3-订单推送数据；4-取消订单</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>from_type</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">0-美团；1-饿了么</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>data_content</td>
-      <td align="center">mediumtext</td>
-      <td align="center">16777215</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">数据内容</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>gmt_create</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center">创建时间</td>
-     </tr>
-    </tbody>
-   </table><a name="order_info_update_record"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：order_info_update_record</b>
-   </div>
+     说明：订单信息修改记录 
+   </div> 
    <div>
-    说明：订单信息修改记录
-   </div>
-   <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center">主键</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>order_id</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单ID；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>order_source</td>
-      <td align="center">varchar</td>
-      <td align="center">32</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单来源</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>before_update</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单信息更新前json</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>after_update</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">订单信息更新后json</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>op_name</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">操作人姓名</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>gmt_create</td>
-      <td align="center">datetime</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">创建时间</td>
-     </tr>
-    </tbody>
-   </table>
-  </div>
-  <footer></footer>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center">主键</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>order_id</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单ID；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；xqxc_order.order_info；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>order_source</td> 
+      <td align="center">varchar</td> 
+      <td align="center">32</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单来源</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>before_update</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单信息更新前json</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>after_update</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">订单信息更新后json</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>op_name</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">操作人姓名</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>gmt_create</td> 
+      <td align="center">datetime</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">创建时间</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <footer></footer>  
  </body>
 </html>

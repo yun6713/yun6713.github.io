@@ -1,519 +1,514 @@
-<html lang="zh">
- <head></head>
+<html lang="zh"> 
+ <head></head> 
  <body style="text-align:center;">
-  ﻿
-  <title>pigear_xcron文档</title>
-  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style>
-  <div style="width:800px; margin:20px auto; text-align:left;">
-   <a name="index"></a>
-   <h2 style="text-align:center; line-height:50px;">pigear_xcron文档</h2>
+   ﻿ 
+  <title>pigear_xcron文档</title> 
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style> 
+  <div style="width:800px; margin:20px auto; text-align:left;"> <a name="index"></a> 
+   <h2 style="text-align:center; line-height:50px;">pigear_xcron文档</h2> 
+   <div> <b>数据库名：pigear_xcron</b> 
+    <br><b>文档版本：0.0.1-SNAPSHOT</b> 
+    <br><b>文档描述：pigear_xcron文档生成</b> 
+    <br> 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>表名</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td><a href="#task_finished">task_finished</a></td> 
+      <td>已完成新任务表</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td><a href="#task_new">task_new</a></td> 
+      <td>task_new</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td><a href="#task_running">task_running</a></td> 
+      <td>运行中任务表</td> 
+     </tr> 
+    </tbody> 
+   </table><a name="task_finished"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：task_finished</b> 
+   </div> 
    <div>
-    <b>数据库名：pigear_xcron</b>
-    <br><b>文档版本：0.0.1-SNAPSHOT</b>
-    <br><b>文档描述：pigear_xcron文档生成</b>
-    <br>
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>表名</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td><a href="#task_finished">task_finished</a></td>
-      <td>已完成新任务表</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td><a href="#task_new">task_new</a></td>
-      <td>task_new</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td><a href="#task_running">task_running</a></td>
-      <td>运行中任务表</td>
-     </tr>
-    </tbody>
-   </table><a name="task_finished"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：task_finished</b>
-   </div>
+     说明：已完成新任务表 
+   </div> 
    <div>
-    说明：已完成新任务表
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>cron_id</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>url</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>arg_json</td> 
+      <td align="center">varchar</td> 
+      <td align="center">8192</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>exec_date</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0000-00-00 00:00:00.000</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>start_date</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>finish_date</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>attrs</td> 
+      <td align="center">json</td> 
+      <td align="center"></td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>status</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>exec_result</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>exec_times</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>remote_ips</td> 
+      <td align="center">json</td> 
+      <td align="center"></td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+    </tbody> 
+   </table><a name="task_new"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：task_new</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>cron_id</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>url</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>arg_json</td>
-      <td align="center">varchar</td>
-      <td align="center">8192</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>gmt_create</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>gmt_modify</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>exec_date</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">0000-00-00 00:00:00.000</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>start_date</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td>finish_date</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">10</td>
-      <td>attrs</td>
-      <td align="center">json</td>
-      <td align="center"></td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">11</td>
-      <td>status</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">12</td>
-      <td>exec_result</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">13</td>
-      <td>exec_times</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">0</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">14</td>
-      <td>remote_ips</td>
-      <td align="center">json</td>
-      <td align="center"></td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-    </tbody>
-   </table><a name="task_new"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：task_new</b>
-   </div>
+     说明： 
+   </div> 
    <div>
-    说明：
-   </div>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>url</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>arg_json</td> 
+      <td align="center">varchar</td> 
+      <td align="center">8192</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>exec_date</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>remote_ips</td> 
+      <td align="center">json</td> 
+      <td align="center"></td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>attrs</td> 
+      <td align="center">json</td> 
+      <td align="center"></td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center"></td> 
+     </tr> 
+    </tbody> 
+   </table><a name="task_running"></a> 
+   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：task_running</b> 
+   </div> 
    <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>url</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>arg_json</td>
-      <td align="center">varchar</td>
-      <td align="center">8192</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>exec_date</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>remote_ips</td>
-      <td align="center">json</td>
-      <td align="center"></td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>attrs</td>
-      <td align="center">json</td>
-      <td align="center"></td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>gmt_create</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>gmt_modify</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center"></td>
-     </tr>
-    </tbody>
-   </table><a name="task_running"></a>
-   <div style="margin-top:30px;" class="table_name">
-    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：task_running</b>
-   </div>
+     说明：运行中任务表 
+   </div> 
    <div>
-    说明：运行中任务表
-   </div>
-   <div>
-    数据列：
-   </div>
-   <table cellspacing="1">
-    <thead>
-     <tr>
-      <td style="width:40px; ">序号</td>
-      <td>名称</td>
-      <td>数据类型</td>
-      <td>长度</td>
-      <td>小数位</td>
-      <td>允许空值</td>
-      <td>主键</td>
-      <td>默认值</td>
-      <td>说明</td>
-     </tr>
-    </thead>
-    <tbody>
-     <tr>
-      <td style="text-align:center;">1</td>
-      <td>id</td>
-      <td align="center">bigint</td>
-      <td align="center">20</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">Y</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">2</td>
-      <td>cron_id</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center">；</td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">3</td>
-      <td>url</td>
-      <td align="center">varchar</td>
-      <td align="center">1024</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">4</td>
-      <td>arg_json</td>
-      <td align="center">varchar</td>
-      <td align="center">8192</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">5</td>
-      <td>gmt_create</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">6</td>
-      <td>gmt_modify</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">CURRENT_TIMESTAMP(3)</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">7</td>
-      <td>exec_date</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">0000-00-00 00:00:00.000</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">8</td>
-      <td>start_date</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">9</td>
-      <td>finish_date</td>
-      <td align="center">timestamp</td>
-      <td align="center">19</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">10</td>
-      <td>attrs</td>
-      <td align="center">json</td>
-      <td align="center"></td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">11</td>
-      <td>status</td>
-      <td align="center">varchar</td>
-      <td align="center">64</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">12</td>
-      <td>exec_result</td>
-      <td align="center">text</td>
-      <td align="center">65535</td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">13</td>
-      <td>exec_times</td>
-      <td align="center">int</td>
-      <td align="center">10</td>
-      <td align="center">0</td>
-      <td align="center">N</td>
-      <td align="center">N</td>
-      <td align="center">0</td>
-      <td align="center"></td>
-     </tr>
-     <tr>
-      <td style="text-align:center;">14</td>
-      <td>remote_ips</td>
-      <td align="center">json</td>
-      <td align="center"></td>
-      <td align="center">0</td>
-      <td align="center">Y</td>
-      <td align="center">N</td>
-      <td align="center"></td>
-      <td align="center"></td>
-     </tr>
-    </tbody>
-   </table>
-  </div>
-  <footer></footer>
+     数据列： 
+   </div> 
+   <table cellspacing="1"> 
+    <thead> 
+     <tr> 
+      <td style="width:40px; ">序号</td> 
+      <td>名称</td> 
+      <td>数据类型</td> 
+      <td>长度</td> 
+      <td>小数位</td> 
+      <td>允许空值</td> 
+      <td>主键</td> 
+      <td>默认值</td> 
+      <td>说明</td> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="text-align:center;">1</td> 
+      <td>id</td> 
+      <td align="center">bigint</td> 
+      <td align="center">20</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">Y</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">2</td> 
+      <td>cron_id</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center">；；；；；</td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">3</td> 
+      <td>url</td> 
+      <td align="center">varchar</td> 
+      <td align="center">1024</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">4</td> 
+      <td>arg_json</td> 
+      <td align="center">varchar</td> 
+      <td align="center">8192</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">5</td> 
+      <td>gmt_create</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">6</td> 
+      <td>gmt_modify</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">CURRENT_TIMESTAMP(3)</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">7</td> 
+      <td>exec_date</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0000-00-00 00:00:00.000</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">8</td> 
+      <td>start_date</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">9</td> 
+      <td>finish_date</td> 
+      <td align="center">timestamp</td> 
+      <td align="center">19</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">10</td> 
+      <td>attrs</td> 
+      <td align="center">json</td> 
+      <td align="center"></td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">11</td> 
+      <td>status</td> 
+      <td align="center">varchar</td> 
+      <td align="center">64</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">12</td> 
+      <td>exec_result</td> 
+      <td align="center">text</td> 
+      <td align="center">65535</td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">13</td> 
+      <td>exec_times</td> 
+      <td align="center">int</td> 
+      <td align="center">10</td> 
+      <td align="center">0</td> 
+      <td align="center">N</td> 
+      <td align="center">N</td> 
+      <td align="center">0</td> 
+      <td align="center"></td> 
+     </tr> 
+     <tr> 
+      <td style="text-align:center;">14</td> 
+      <td>remote_ips</td> 
+      <td align="center">json</td> 
+      <td align="center"></td> 
+      <td align="center">0</td> 
+      <td align="center">Y</td> 
+      <td align="center">N</td> 
+      <td align="center"></td> 
+      <td align="center"></td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <footer></footer>  
  </body>
 </html>
