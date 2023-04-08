@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35a96b5c-b316-4757-84b8-25a73bfde726" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/navigationXssd.html" beforeDir="false" afterPath="$PROJECT_DIR$/navigationXssd.html" afterDir="false" />
-    </list>
+    <list default="true" id="35a96b5c-b316-4757-84b8-25a73bfde726" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,14 +38,21 @@
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="L:\github\githubIO" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -61,7 +66,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680750904746</updated>
-      <workItem from="1680750915194" duration="753000" />
+      <workItem from="1680750915194" duration="1428000" />
+      <workItem from="1680861114665" duration="1113000" />
     </task>
     <servers />
   </component>
