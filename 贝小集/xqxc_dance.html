@@ -1,1132 +1,1140 @@
-<html lang="zh"> 
- <head></head> 
+<html lang="zh">
+ <head></head>
  <body style="text-align:center;">
-   ﻿ 
-  <title>xqxc_dance文档</title> 
-  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style> 
-  <div style="width:800px; margin:20px auto; text-align:left;"> <a name="index"></a> 
-   <h2 style="text-align:center; line-height:50px;">xqxc_dance文档</h2> 
-   <div> <b>数据库名：xqxc_dance</b> 
-    <br><b>文档版本：0.0.1-SNAPSHOT</b> 
-    <br><b>文档描述：xqxc_dance文档生成</b> 
-    <br> 
-   </div> 
-   <table cellspacing="1"> 
-    <thead> 
-     <tr> 
-      <td style="width:40px; ">序号</td> 
-      <td>表名</td> 
-      <td>说明</td> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td style="text-align:center;">1</td> 
-      <td><a href="#dc_dance_group">dc_dance_group</a></td> 
-      <td>舞蹈组别</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">2</td> 
-      <td><a href="#dc_dance_info">dc_dance_info</a></td> 
-      <td>舞种信息</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">3</td> 
-      <td><a href="#dc_game_area">dc_game_area</a></td> 
-      <td>赛区表</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">4</td> 
-      <td><a href="#dc_game_ext">dc_game_ext</a></td> 
-      <td>项目附件表</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">5</td> 
-      <td><a href="#dc_game_info">dc_game_info</a></td> 
-      <td>项目信息表</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">6</td> 
-      <td><a href="#dc_register_info">dc_register_info</a></td> 
-      <td>报名信息</td> 
-     </tr> 
-    </tbody> 
-   </table><a name="dc_dance_group"></a> 
-   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_dance_group</b> 
-   </div> 
+  ﻿
+  <title>xqxc_dance文档</title>
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style>
+  <div style="width:800px; margin:20px auto; text-align:left;">
+   <a name="index"></a>
+   <h2 style="text-align:center; line-height:50px;">xqxc_dance文档</h2>
    <div>
-     说明：舞蹈组别 
-   </div> 
+    <b>数据库名：xqxc_dance</b>
+    <br><b>文档版本：0.0.1-SNAPSHOT</b>
+    <br><b>文档描述：xqxc_dance文档生成</b>
+    <br>
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>表名</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td><a href="#dc_dance_group">dc_dance_group</a></td>
+      <td>舞蹈组别</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td><a href="#dc_dance_info">dc_dance_info</a></td>
+      <td>舞种信息</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td><a href="#dc_game_area">dc_game_area</a></td>
+      <td>赛区表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td><a href="#dc_game_ext">dc_game_ext</a></td>
+      <td>项目附件表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td><a href="#dc_game_info">dc_game_info</a></td>
+      <td>项目信息表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td><a href="#dc_register_info">dc_register_info</a></td>
+      <td>报名信息</td>
+     </tr>
+    </tbody>
+   </table><a name="dc_dance_group"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_dance_group</b>
+   </div>
    <div>
-     数据列： 
-   </div> 
-   <table cellspacing="1"> 
-    <thead> 
-     <tr> 
-      <td style="width:40px; ">序号</td> 
-      <td>名称</td> 
-      <td>数据类型</td> 
-      <td>长度</td> 
-      <td>小数位</td> 
-      <td>允许空值</td> 
-      <td>主键</td> 
-      <td>默认值</td> 
-      <td>说明</td> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td style="text-align:center;">1</td> 
-      <td>id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">Y</td> 
-      <td align="center"></td> 
-      <td align="center"></td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">2</td> 
-      <td>group_name</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">组别名称</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">3</td> 
-      <td>age_msg</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">年龄信息</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">4</td> 
-      <td>state</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">1</td> 
-      <td align="center">状态(0:禁用 1:启用)</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">5</td> 
-      <td>gmt_create</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">创建时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">6</td> 
-      <td>create_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">创建人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">7</td> 
-      <td>gmt_modified</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">修改时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">8</td> 
-      <td>modify_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">修改人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">9</td> 
-      <td>is_delete</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">是否删除(0:否1:是)</td> 
-     </tr> 
-    </tbody> 
-   </table><a name="dc_dance_info"></a> 
-   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_dance_info</b> 
-   </div> 
+    说明：舞蹈组别
+   </div>
    <div>
-     说明：舞种信息 
-   </div> 
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>group_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">组别名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>age_msg</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">年龄信息</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>state</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">状态(0:禁用 1:启用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>gmt_modified</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否删除(0:否1:是)</td>
+     </tr>
+    </tbody>
+   </table><a name="dc_dance_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_dance_info</b>
+   </div>
    <div>
-     数据列： 
-   </div> 
-   <table cellspacing="1"> 
-    <thead> 
-     <tr> 
-      <td style="width:40px; ">序号</td> 
-      <td>名称</td> 
-      <td>数据类型</td> 
-      <td>长度</td> 
-      <td>小数位</td> 
-      <td>允许空值</td> 
-      <td>主键</td> 
-      <td>默认值</td> 
-      <td>说明</td> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td style="text-align:center;">1</td> 
-      <td>id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">Y</td> 
-      <td align="center"></td> 
-      <td align="center"></td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">2</td> 
-      <td>dance_name</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">舞种名称</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">3</td> 
-      <td>price</td> 
-      <td align="center">int</td> 
-      <td align="center">10</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">报名费用</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">4</td> 
-      <td>min_number</td> 
-      <td align="center">int</td> 
-      <td align="center">10</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">最小人数</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">5</td> 
-      <td>max_number</td> 
-      <td align="center">int</td> 
-      <td align="center">10</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">最大人数</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">6</td> 
-      <td>state</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">1</td> 
-      <td align="center">状态(0:禁用 1:启用)</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">7</td> 
-      <td>gmt_create</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">创建时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">8</td> 
-      <td>create_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">创建人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">9</td> 
-      <td>gmt_modified</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">修改时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">10</td> 
-      <td>modify_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">修改人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">11</td> 
-      <td>is_delete</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">是否删除(0:否1:是)</td> 
-     </tr> 
-    </tbody> 
-   </table><a name="dc_game_area"></a> 
-   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_game_area</b> 
-   </div> 
+    说明：舞种信息
+   </div>
    <div>
-     说明：赛区表 
-   </div> 
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>dance_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">舞种名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>price</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">报名费用</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>min_number</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">最小人数</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>max_number</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">最大人数</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>state</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">状态(0:禁用 1:启用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>gmt_modified</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否删除(0:否1:是)</td>
+     </tr>
+    </tbody>
+   </table><a name="dc_game_area"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_game_area</b>
+   </div>
    <div>
-     数据列： 
-   </div> 
-   <table cellspacing="1"> 
-    <thead> 
-     <tr> 
-      <td style="width:40px; ">序号</td> 
-      <td>名称</td> 
-      <td>数据类型</td> 
-      <td>长度</td> 
-      <td>小数位</td> 
-      <td>允许空值</td> 
-      <td>主键</td> 
-      <td>默认值</td> 
-      <td>说明</td> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td style="text-align:center;">1</td> 
-      <td>id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">Y</td> 
-      <td align="center"></td> 
-      <td align="center"></td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">2</td> 
-      <td>area_name</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">赛区名称</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">3</td> 
-      <td>state</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">1</td> 
-      <td align="center">状态(0:禁用 1:启用)</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">4</td> 
-      <td>gmt_create</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">创建时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">5</td> 
-      <td>create_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">创建人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">6</td> 
-      <td>gmt_modified</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">修改时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">7</td> 
-      <td>modify_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">修改人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">8</td> 
-      <td>is_delete</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">Y</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">是否删除(0:否1:是)</td> 
-     </tr> 
-    </tbody> 
-   </table><a name="dc_game_ext"></a> 
-   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_game_ext</b> 
-   </div> 
+    说明：赛区表
+   </div>
    <div>
-     说明：项目附件表 
-   </div> 
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>area_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">赛区名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>state</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">状态(0:禁用 1:启用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>gmt_modified</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否删除(0:否1:是)</td>
+     </tr>
+    </tbody>
+   </table><a name="dc_game_ext"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_game_ext</b>
+   </div>
    <div>
-     数据列： 
-   </div> 
-   <table cellspacing="1"> 
-    <thead> 
-     <tr> 
-      <td style="width:40px; ">序号</td> 
-      <td>名称</td> 
-      <td>数据类型</td> 
-      <td>长度</td> 
-      <td>小数位</td> 
-      <td>允许空值</td> 
-      <td>主键</td> 
-      <td>默认值</td> 
-      <td>说明</td> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td style="text-align:center;">1</td> 
-      <td>id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">Y</td> 
-      <td align="center"></td> 
-      <td align="center"></td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">2</td> 
-      <td>game_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目id；null；；</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">3</td> 
-      <td>ext_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">附件id(舞种id、组别id)；null；；</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">4</td> 
-      <td>ext_type</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">附件类型(舞种DANCE;组别DANCE_GROUP;)</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">5</td> 
-      <td>gmt_create</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">创建时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">6</td> 
-      <td>create_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">创建人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">7</td> 
-      <td>gmt_modified</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">修改时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">8</td> 
-      <td>modify_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">修改人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">9</td> 
-      <td>is_delete</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">是否删除(0:否1:是)</td> 
-     </tr> 
-    </tbody> 
-   </table><a name="dc_game_info"></a> 
-   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_game_info</b> 
-   </div> 
+    说明：项目附件表
+   </div>
    <div>
-     说明：项目信息表 
-   </div> 
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>game_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>ext_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">附件id(舞种id、组别id)；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>ext_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">附件类型(舞种DANCE;组别DANCE_GROUP;)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>gmt_modified</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否删除(0:否1:是)</td>
+     </tr>
+    </tbody>
+   </table><a name="dc_game_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_game_info</b>
+   </div>
    <div>
-     数据列： 
-   </div> 
-   <table cellspacing="1"> 
-    <thead> 
-     <tr> 
-      <td style="width:40px; ">序号</td> 
-      <td>名称</td> 
-      <td>数据类型</td> 
-      <td>长度</td> 
-      <td>小数位</td> 
-      <td>允许空值</td> 
-      <td>主键</td> 
-      <td>默认值</td> 
-      <td>说明</td> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td style="text-align:center;">1</td> 
-      <td>id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">Y</td> 
-      <td align="center"></td> 
-      <td align="center"></td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">2</td> 
-      <td>game_name</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目名称</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">3</td> 
-      <td>game_cover</td> 
-      <td align="center">varchar</td> 
-      <td align="center">256</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目封面</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">4</td> 
-      <td>game_img</td> 
-      <td align="center">varchar</td> 
-      <td align="center">1024</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目图片(多张以;隔开)</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">5</td> 
-      <td>game_video</td> 
-      <td align="center">varchar</td> 
-      <td align="center">512</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目视频url</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">6</td> 
-      <td>game_type</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目类型(赛事:GAME,培训:TRAIN)</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">7</td> 
-      <td>game_desc</td> 
-      <td align="center">mediumtext</td> 
-      <td align="center">16777215</td> 
-      <td align="center">0</td> 
-      <td align="center">Y</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目描述</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">8</td> 
-      <td>game_address</td> 
-      <td align="center">varchar</td> 
-      <td align="center">256</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目地点</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">9</td> 
-      <td>game_area_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目地区id；null；；</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">10</td> 
-      <td>sort_no</td> 
-      <td align="center">int</td> 
-      <td align="center">10</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">排序号</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">11</td> 
-      <td>sign_state</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">GAME_BEFORE</td> 
-      <td align="center">报名状态(未开始,报名中,已暂停,报名结束)</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">12</td> 
-      <td>sign_begin_date</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">Y</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">报名开始时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">13</td> 
-      <td>sign_end_date</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">Y</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">报名结束时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">14</td> 
-      <td>game_begin_date</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">Y</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目开始时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">15</td> 
-      <td>game_end_date</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">Y</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">项目结束时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">16</td> 
-      <td>gmt_create</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">创建时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">17</td> 
-      <td>create_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">创建人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">18</td> 
-      <td>gmt_modified</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">修改时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">19</td> 
-      <td>modify_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">修改人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">20</td> 
-      <td>is_delete</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">是否删除(0:否1:是)</td> 
-     </tr> 
-    </tbody> 
-   </table><a name="dc_register_info"></a> 
-   <div style="margin-top:30px;" class="table_name"> <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_register_info</b> 
-   </div> 
+    说明：项目信息表
+   </div>
    <div>
-     说明：报名信息 
-   </div> 
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>game_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>game_cover</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目封面</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>game_img</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目图片(多张以;隔开)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>game_video</td>
+      <td align="center">varchar</td>
+      <td align="center">512</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目视频url</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>game_type</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目类型(赛事:GAME,培训:TRAIN)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>game_desc</td>
+      <td align="center">mediumtext</td>
+      <td align="center">16777215</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目描述</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>game_address</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目地点</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>game_area_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目地区id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>sort_no</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">排序号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>sign_state</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">GAME_BEFORE</td>
+      <td align="center">报名状态(未开始,报名中,已暂停,报名结束)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>sign_begin_date</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">报名开始时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>sign_end_date</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">报名结束时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>game_begin_date</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目开始时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>game_end_date</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目结束时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>gmt_modified</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否删除(0:否1:是)</td>
+     </tr>
+    </tbody>
+   </table><a name="dc_register_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：dc_register_info</b>
+   </div>
    <div>
-     数据列： 
-   </div> 
-   <table cellspacing="1"> 
-    <thead> 
-     <tr> 
-      <td style="width:40px; ">序号</td> 
-      <td>名称</td> 
-      <td>数据类型</td> 
-      <td>长度</td> 
-      <td>小数位</td> 
-      <td>允许空值</td> 
-      <td>主键</td> 
-      <td>默认值</td> 
-      <td>说明</td> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td style="text-align:center;">1</td> 
-      <td>id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">Y</td> 
-      <td align="center"></td> 
-      <td align="center">主键id</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">2</td> 
-      <td>account_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">会员账号，关联com_account_info表；null；；</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">3</td> 
-      <td>name</td> 
-      <td align="center">varchar</td> 
-      <td align="center">50</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">姓名</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">4</td> 
-      <td>age</td> 
-      <td align="center">int</td> 
-      <td align="center">10</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">年龄</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">5</td> 
-      <td>sex</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">性别(0:女,1:男)</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">6</td> 
-      <td>country</td> 
-      <td align="center">varchar</td> 
-      <td align="center">50</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">国家</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">7</td> 
-      <td>province_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">省；null</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">8</td> 
-      <td>province_name</td> 
-      <td align="center">varchar</td> 
-      <td align="center">50</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">省</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">9</td> 
-      <td>city_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">市；null</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">10</td> 
-      <td>city_name</td> 
-      <td align="center">varchar</td> 
-      <td align="center">50</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">市</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">11</td> 
-      <td>area_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">区；null</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">12</td> 
-      <td>area_name</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">区</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">13</td> 
-      <td>id_card</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">Y</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">身份证号</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">14</td> 
-      <td>id_card_url</td> 
-      <td align="center">varchar</td> 
-      <td align="center">255</td> 
-      <td align="center">0</td> 
-      <td align="center">Y</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">身份证正面照</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">15</td> 
-      <td>tel</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">手机号</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">16</td> 
-      <td>dance_group_name</td> 
-      <td align="center">varchar</td> 
-      <td align="center">32</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">舞队名称</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">17</td> 
-      <td>is_leader</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">是否领队</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">18</td> 
-      <td>people_num</td> 
-      <td align="center">int</td> 
-      <td align="center">10</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">舞队人数</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">19</td> 
-      <td>game_info_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">关联dc_game_info表id；null；；</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">20</td> 
-      <td>dance_info_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">关联dc_dance_info表id；null；；</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">21</td> 
-      <td>dance_group_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">管理dc_dance_group表id；null；；</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">22</td> 
-      <td>pay_state</td> 
-      <td align="center">varchar</td> 
-      <td align="center">16</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center"></td> 
-      <td align="center">支付状态（已报名:PAID 未支付：NOT_PAY）</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">23</td> 
-      <td>gmt_create</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">创建时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">24</td> 
-      <td>create_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">创建人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">25</td> 
-      <td>gmt_modified</td> 
-      <td align="center">timestamp</td> 
-      <td align="center">19</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">CURRENT_TIMESTAMP(3)</td> 
-      <td align="center">修改时间</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">26</td> 
-      <td>modify_user_id</td> 
-      <td align="center">bigint</td> 
-      <td align="center">20</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">修改人</td> 
-     </tr> 
-     <tr> 
-      <td style="text-align:center;">27</td> 
-      <td>is_delete</td> 
-      <td align="center">tinyint</td> 
-      <td align="center">4</td> 
-      <td align="center">0</td> 
-      <td align="center">N</td> 
-      <td align="center">N</td> 
-      <td align="center">0</td> 
-      <td align="center">是否删除(0:否1:是)</td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <footer></footer>  
+    说明：报名信息
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>account_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">会员账号，关联com_account_info表；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">姓名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>age</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">年龄</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>sex</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">性别(0:女,1:男)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>country</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">国家</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>province_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">省</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>province_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">省</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>city_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">市</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>city_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">市</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>area_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">区</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>area_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">区</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>id_card</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">身份证号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>id_card_url</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">身份证正面照</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>tel</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">手机号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>dance_group_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">舞队名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>is_leader</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否领队</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>people_num</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">舞队人数</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>game_info_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">关联dc_game_info表id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>dance_info_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">关联dc_dance_info表id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>dance_group_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">管理dc_dance_group表id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>pay_state</td>
+      <td align="center">varchar</td>
+      <td align="center">16</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付状态（已报名:PAID 未支付：NOT_PAY）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>gmt_create</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>create_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">25</td>
+      <td>gmt_modified</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP(3)</td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">26</td>
+      <td>modify_user_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">27</td>
+      <td>is_delete</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否删除(0:否1:是)</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <footer></footer>
  </body>
 </html>
