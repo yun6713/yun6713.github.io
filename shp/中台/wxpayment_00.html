@@ -1,0 +1,248 @@
+<html lang="zh">
+ <head></head>
+ <body style="text-align:center;">
+  ﻿
+  <title>wxpayment_00文档</title>
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style>
+  <div style="width:800px; margin:20px auto; text-align:left;">
+   <a name="index"></a>
+   <h2 style="text-align:center; line-height:50px;">wxpayment_00文档</h2>
+   <div>
+    <b>数据库名：wxpayment_00</b>
+    <br><b>文档版本：0.0.1-SNAPSHOT</b>
+    <br><b>文档描述：wxpayment_00文档生成</b>
+    <br>
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>表名</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td><a href="#merchant_info">merchant_info</a></td>
+      <td>商户号配置信息</td>
+     </tr>
+    </tbody>
+   </table><a name="merchant_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：merchant_info</b>
+   </div>
+   <div>
+    说明：商户号配置信息
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>tenant_code</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">租户编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>store_code</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">门店编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>mch_type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商户号类型1:直连商户2:特约商户</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>mch_id</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商户号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>channels</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">使用渠道1:普通支付2:医保支付</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>appid</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">应用ID,与商户号绑定的公众号或小程序appid</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>app_type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">应用类型：1:公众号 2:小程序</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>apikey_two</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">V2KEY,使用V2功能必须</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>apikey_three</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">V3KEY，直连商户必填</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>credential_url</td>
+      <td align="center">varchar</td>
+      <td align="center">200</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证书地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>credential_extime</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">直连商户必须</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>create_pin</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>update_pin</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">删除标识 0-有效 1-删除</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <footer></footer>
+ </body>
+</html>

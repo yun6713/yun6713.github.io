@@ -1,0 +1,2666 @@
+<html lang="zh">
+ <head></head>
+ <body style="text-align:center;">
+  ﻿
+  <title>shp-pay文档</title>
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style>
+  <div style="width:800px; margin:20px auto; text-align:left;">
+   <a name="index"></a>
+   <h2 style="text-align:center; line-height:50px;">shp-pay文档</h2>
+   <div>
+    <b>数据库名：shp-pay</b>
+    <br><b>文档版本：0.0.1-SNAPSHOT</b>
+    <br><b>文档描述：shp-pay文档生成</b>
+    <br>
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>表名</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td><a href="#pay_applyment_attach">pay_applyment_attach</a></td>
+      <td>进件附件</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td><a href="#pay_applyment_business_info">pay_applyment_business_info</a></td>
+      <td>经营资料</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td><a href="#pay_applyment_contact">pay_applyment_contact</a></td>
+      <td>申请单超管信息</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td><a href="#pay_applyment_index">pay_applyment_index</a></td>
+      <td>支付进件申请主表;</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td><a href="#pay_applyment_settlement_activities">pay_applyment_settlement_activities</a></td>
+      <td>优惠费率活动</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td><a href="#pay_applyment_settlement_info">pay_applyment_settlement_info</a></td>
+      <td>结算信息</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td><a href="#pay_applyment_settlement_rule">pay_applyment_settlement_rule</a></td>
+      <td>费率结算规则对照表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td><a href="#pay_applyment_ubo_info">pay_applyment_ubo_info</a></td>
+      <td>最终受益人信息表;</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td><a href="#pay_bank_info">pay_bank_info</a></td>
+      <td>银行信息</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td><a href="#undo_log">undo_log</a></td>
+      <td>AT transaction mode undo table</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td><a href="#we_pay_native">we_pay_native</a></td>
+      <td>扫码付款</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td><a href="#we_pay_order">we_pay_order</a></td>
+      <td>微信支付订单</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td><a href="#we_pay_order_update_error">we_pay_order_update_error</a></td>
+      <td>微信支付订单更新失败的记录表</td>
+     </tr>
+    </tbody>
+   </table><a name="pay_applyment_attach"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：pay_applyment_attach</b>
+   </div>
+   <div>
+    说明：进件附件
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>attach_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">附件ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>apply_ment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">申请ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>biz_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">业务ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>original_filename</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">原始文件名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>ext</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">扩展名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>biz_type</td>
+      <td align="center">varchar</td>
+      <td align="center">30</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">业务类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>attach_url</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">附件地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>order_no</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">排序号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>media_id</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">微信图片ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>corp_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业ID；</td>
+     </tr>
+    </tbody>
+   </table><a name="pay_applyment_business_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：pay_applyment_business_info</b>
+   </div>
+   <div>
+    说明：经营资料
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>sale_info_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>apply_ment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">申请ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>sales_scenes_type</td>
+      <td align="center">varchar</td>
+      <td align="center">30</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">经营场景类型;SALES_SCENES_STORE：线下场所 SALES_SCENES_MP：公众号 SALES_SCENES_MINI_PROGRAM：小程序 SALES_SCENES_WEB：互联网网站 SALES_SCENES_APP：APP SALES_SCENES_WEWORK：企业微信</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>biz_store_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">线下场所名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>biz_address_code</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">线下场所省市编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>biz_store_address</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">线下场所地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>sub_appid</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">不同场景下的商家AppID;包含：线下场所对应的商家AppID（biz_sub_appid），商家公众号AppID（mp_sub_appid），商家小程序APPID（mini_program_sub_appid），商家应用APPID（app_sub_appid），互联网网站对应的商家APPID（web_appid），商家企业微信CorpID（sub_corp_id）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>service_appid</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">服务商AppID(公众号，小程序)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>domain</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">互联网网站域名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>corp_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业ID；</td>
+     </tr>
+    </tbody>
+   </table><a name="pay_applyment_contact"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：pay_applyment_contact</b>
+   </div>
+   <div>
+    说明：申请单超管信息
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>apply_ment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">申请ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>contact_id_doc_type</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员证件类型;IDENTIFICATION_TYPE_IDCARD：中国大陆居民-身份证 IDENTIFICATION_TYPE_OVERSEA_PASSPORT：其他国家或地区居民-护照 IDENTIFICATION_TYPE_HONGKONG_PASSPORT：中国香港居民-来往内地通行证 IDENTIFICATION_TYPE_MACAO_PASSPORT：中国澳门居民-来往内地通行证 IDENTIFICATION_TYPE_TAIWAN_PASSPORT：中国台湾居民-来往大陆通行证 IDENTIFICATION_TYPE_FOREIGN_RESIDENT：外国人居留证 IDENTIFICATION_TYPE_HONGKONG_MACAO_RESIDENT：港澳居民证 IDENTIFICATION_TYPE_TAIWAN_RESIDENT：台湾居民证</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>contact_id_number</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员身份证件号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>contact_period_begin</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员证件有效期开始时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>contact_period_end</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员证件有效期结束时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>openid</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员微信OpenID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>mobile_phone</td>
+      <td align="center">varchar</td>
+      <td align="center">30</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">联系手机</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>contact_email</td>
+      <td align="center">varchar</td>
+      <td align="center">30</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">联系邮箱</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>contact_type</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>contact_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员姓名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>corp_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业ID；</td>
+     </tr>
+    </tbody>
+   </table><a name="pay_applyment_index"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：pay_applyment_index</b>
+   </div>
+   <div>
+    说明：支付进件申请主表;
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>apply_ment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>business_code</td>
+      <td align="center">varchar</td>
+      <td align="center">124</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">业务申请编号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>subject_type</td>
+      <td align="center">varchar</td>
+      <td align="center">30</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">主体类型;SUBJECT_TYPE_INDIVIDUAL个体户， SUBJECT_TYPE_ENTERPRISE企业， SUBJECT_TYPE_GOVERNMENT 党政机关， SUBJECT_TYPE_INSTITUTIONS事业单位， SUBJECT_TYPE_OTHERS其他组织</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>finance_institution</td>
+      <td align="center">bit</td>
+      <td align="center">1</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">是否金融机构;1是，0否</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>license_number</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">注册号/统一社会信用代码/登记证书号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>license_merchant_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商户名称(营业执照、登记证书通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>license_legal_person</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">个体户经营者/法人姓名(营业执照、登记证书通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>license_address</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">注册地址(营业执照、登记证书通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>license_period_begin</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">有效期限开始日期(营业执照、登记证书通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>license_period_end</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">有效期限结束日期(营业执照、登记证书通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>cert_type</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">登记证书类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>finance_type</td>
+      <td align="center">varchar</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">金融机构类型;BANK_AGENT：银行业； PAYMENT_AGENT：支付机构； INSURANCE：保险业； TRADE_AND_SETTLE：交易及结算类金融机构； OTHER：其他金融机构</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>id_holder_type</td>
+      <td align="center">varchar</td>
+      <td align="center">5</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件持有人类型;LEGAL：法人 SUPER：经办人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>id_doc_type</td>
+      <td align="center">varchar</td>
+      <td align="center">40</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件类型;IDENTIFICATION_TYPE_IDCARD：中国大陆居民-身份证 IDENTIFICATION_TYPE_OVERSEA_PASSPORT：其他国家或地区居民-护照 IDENTIFICATION_TYPE_HONGKONG_PASSPORT：中国香港居民-来往内地通行证 IDENTIFICATION_TYPE_MACAO_PASSPORT：中国澳门居民-来往内地通行证 IDENTIFICATION_TYPE_TAIWAN_PASSPORT：中国台湾居民-来往大陆通行证 IDENTIFICATION_TYPE_FOREIGN_RESIDENT：外国人居留证 IDENTIFICATION_TYPE_HONGKONG_MACAO_RESIDENT：港澳居民证 IDENTIFICATION_TYPE_TAIWAN_RESIDENT：台湾居民证</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>id_doc_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">身份证姓名(身份证、其他证件通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>id_doc_number</td>
+      <td align="center">varchar</td>
+      <td align="center">30</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">身份证号码(身份证、其他证件通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>id_doc_address</td>
+      <td align="center">varchar</td>
+      <td align="center">512</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">身份证居住地址(身份证、其他证件通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>doc_period_begin</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">身份证有效期开始时间(身份证、其他证件通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>doc_period_end</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">身份证有效期结束时间(身份证、其他证件通用)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>owner</td>
+      <td align="center">bit</td>
+      <td align="center">1</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">经营者/法人是否为受益人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>merchant_shortname</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商户简称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>service_phone</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">客服电话</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>contact_type</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>contact_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员姓名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">25</td>
+      <td>sales_scenes_type_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">经营场景类型名称（多个逗号分隔存）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">26</td>
+      <td>sales_scenes_type</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">经营场景类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">27</td>
+      <td>status</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">状态;1.待提交微信审核 2、APPLYMENT_STATE_EDITTING（编辑中）：提交申请发生错误导致，请尝试重新提交。 3、APPLYMENT_STATE_AUDITING（审核中）：申请单正在审核中，超级管理员用微信打开“签约链接”，完成绑定微信号后，申请单进度将通过微信公众号通知超级管理员，引导完成后续步骤。 4、APPLYMENT_STATE_REJECTED（已驳回）：请按照驳回原因修改申请资料，超级管理员用微信打开“签约链接”，完成绑定微信号，后续申请单进度将通过微信公众号通知超级管理员。 5、APPLYMENT_STATE_TO_BE_CONFIRMED（待账户验证）：请超级管理员使用微信打开返回的“签约链接”，根据页面指引完成账户验证。 6、APPLYMENT_STATE_TO_BE_SIGNED（待签约）：请超级管理员使用微信打开返回的“签约链接”，根据页面指引完成签约。 7、APPLYMENT_STATE_SIGNING（开通权限中）：系统开通相关权限中，请耐心等待。 8、APPLYMENT_STATE_FINISHED（已完成）：商户入驻申请已完成。 9、APPLYMENT_STATE_CANCELED（已作废）：申请单已被撤销。</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">28</td>
+      <td>status_msg</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">申请状态描述</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">29</td>
+      <td>status_desc</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">状态描述</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">30</td>
+      <td>reject_reason</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">驳回原因</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">31</td>
+      <td>sub_mchid</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">特约商户号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">32</td>
+      <td>wechat_applyment_id</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">微信支付申请单号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">33</td>
+      <td>sign_url</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">超级管理员签约链接</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">34</td>
+      <td>business_addition_msg</td>
+      <td align="center">varchar</td>
+      <td align="center">512</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">补充材料说明</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">35</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">36</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">37</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">38</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">39</td>
+      <td>corp_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业ID；</td>
+     </tr>
+    </tbody>
+   </table><a name="pay_applyment_settlement_activities"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：pay_applyment_settlement_activities</b>
+   </div>
+   <div>
+    说明：优惠费率活动
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>activities_id</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>activities_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">活动名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>base_rate</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">2</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>min_rate</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">2</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>max_rate</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">2</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>end_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">活动截至日期</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>activities_desc</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">活动介绍</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>activities_rule</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">活动规则</td>
+     </tr>
+    </tbody>
+   </table><a name="pay_applyment_settlement_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：pay_applyment_settlement_info</b>
+   </div>
+   <div>
+    说明：结算信息
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>apply_ment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">申请ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>settlement_id</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">入驻结算规则ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>settlement_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">入驻结算规则描述</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>qualification_type</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">所属行业</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>activities_id</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">优惠费率活动ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>activities_rate</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">优惠费率活动值</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>bank_account_type</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">结算银行账户类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>account_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">开户名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>account_bank</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">开户银行</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>bank_address_code</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">开户银行省市编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>bank_branch_id</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">开户银行联行号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>bank_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">开户银行全称（含支行）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>account_number</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">银行账号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>corp_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业ID；</td>
+     </tr>
+    </tbody>
+   </table><a name="pay_applyment_settlement_rule"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：pay_applyment_settlement_rule</b>
+   </div>
+   <div>
+    说明：费率结算规则对照表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>settlement_id</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">结算规则ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>subject_type</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">主体类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>rule</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">结算规则</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>fit_type</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">适合行业</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>qualification_type</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">行业</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>qualification_id</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">行业ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>other_ask</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">是否有其他要求1是，0否</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>ask_detail</td>
+      <td align="center">varchar</td>
+      <td align="center">1000</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">特殊要求</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>rate</td>
+      <td align="center">varchar</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">费率</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>pay_cycle</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">入账周期</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>single_limit</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">单笔限额</td>
+     </tr>
+    </tbody>
+   </table><a name="pay_applyment_ubo_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：pay_applyment_ubo_info</b>
+   </div>
+   <div>
+    说明：最终受益人信息表;
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>ubo_id_doc_type</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>ubo_id_doc_name</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件姓名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>ubo_id_doc_number</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>ubo_id_doc_address</td>
+      <td align="center">varchar</td>
+      <td align="center">200</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件居住地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>ubo_period_begin</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件有效期开始时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>ubo_period_end</td>
+      <td align="center">varchar</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件有效期结束时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>order_no</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">序号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>applyment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">申请ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>corp_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新时间</td>
+     </tr>
+    </tbody>
+   </table><a name="pay_bank_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：pay_bank_info</b>
+   </div>
+   <div>
+    说明：银行信息
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>bank_branch_id</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">开户银行联行号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>bank_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">开户银行全称（含支行）</td>
+     </tr>
+    </tbody>
+   </table><a name="undo_log"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：undo_log</b>
+   </div>
+   <div>
+    说明：AT transaction mode undo table
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>branch_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">branch transaction id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>xid</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">global transaction id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>context</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">undo_log context,such as serialization</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>rollback_info</td>
+      <td align="center">longblob</td>
+      <td align="center">2147483647</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">rollback info</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>log_status</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">0:normal status,1:defense status</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>log_created</td>
+      <td align="center">datetime</td>
+      <td align="center">26</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">create datetime</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>log_modified</td>
+      <td align="center">datetime</td>
+      <td align="center">26</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">modify datetime</td>
+     </tr>
+    </tbody>
+   </table><a name="we_pay_native"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：we_pay_native</b>
+   </div>
+   <div>
+    说明：扫码付款
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>pay_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">申请支付ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>order_id</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>biz_id</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">业务ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>corp_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>config_source</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">请求配置信息</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>code_url</td>
+      <td align="center">varchar</td>
+      <td align="center">512</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">二维码地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>pay_status</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付状态:0,申请中,1支付成功,2支付失败</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>expire_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">二维码过期支付时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>decrypt_pay_result</td>
+      <td align="center">text</td>
+      <td align="center">65535</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">源支付结果,解密后版本</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>last_ver</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">版本</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>pay_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付成功时间</td>
+     </tr>
+    </tbody>
+   </table><a name="we_pay_order"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：we_pay_order</b>
+   </div>
+   <div>
+    说明：微信支付订单
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>corp_id</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>appid</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">微信分配的公众账号ID（企业微信corpid即为此appid）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>mch_id</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">微信支付分配的商户号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>partner_trade_no</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>openid</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">用户openid</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>check_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>amount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">付款金额, 单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>spbill_create_ip</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">IP</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>act_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>description</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">付款说明</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>add_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">添加时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>status</td>
+      <td align="center">varchar</td>
+      <td align="center">16</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">付款结果:SUCCESS/FAIL</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>payment_no</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业微信企业付款成功，返回的微信订单号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>payment_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业微信企业付款成功时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>last_ver</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">最后版本</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>reason</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">失败原因</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>pay_type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付类型:1员工付款,2企业红包,3服务商员工付款,4服务商红包</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>rcv_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">领取时间:红包类型有</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>refund_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">25</td>
+      <td>refund_amount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">退款金额:单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">26</td>
+      <td>redpack_status</td>
+      <td align="center">varchar</td>
+      <td align="center">30</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">红包状态:SENDING:发放 SENT:已发放待领取 FAILED：发放失败 RECEIVED:已领取 RFUND_ING:退款中 REFUND:已退款</td>
+     </tr>
+    </tbody>
+   </table><a name="we_pay_order_update_error"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：we_pay_order_update_error</b>
+   </div>
+   <div>
+    说明：微信支付订单更新失败的记录表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>corp_id</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>appid</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">微信分配的公众账号ID（企业微信corpid即为此appid）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>mch_id</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">微信支付分配的商户号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>partner_trade_no</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>openid</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">用户openid</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>check_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>amount</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">付款金额, 单位分</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>spbill_create_ip</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">IP</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>act_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">项目名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>description</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">付款说明</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>add_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">添加时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>status</td>
+      <td align="center">varchar</td>
+      <td align="center">16</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">付款结果:SUCCESS/FAIL</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>payment_no</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业微信企业付款成功，返回的微信订单号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>payment_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业微信企业付款成功时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>last_ver</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">最后版本</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>reason</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">失败原因</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>order_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">order表ID；</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <footer></footer>
+ </body>
+</html>

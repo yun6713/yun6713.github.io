@@ -1,0 +1,464 @@
+<html lang="zh">
+ <head></head>
+ <body style="text-align:center;">
+  ﻿
+  <title>seata142文档</title>
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style>
+  <div style="width:800px; margin:20px auto; text-align:left;">
+   <a name="index"></a>
+   <h2 style="text-align:center; line-height:50px;">seata142文档</h2>
+   <div>
+    <b>数据库名：seata142</b>
+    <br><b>文档版本：0.0.1-SNAPSHOT</b>
+    <br><b>文档描述：seata142文档生成</b>
+    <br>
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>表名</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td><a href="#branch_table">branch_table</a></td>
+      <td>branch_table</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td><a href="#global_table">global_table</a></td>
+      <td>global_table</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td><a href="#lock_table">lock_table</a></td>
+      <td>lock_table</td>
+     </tr>
+    </tbody>
+   </table><a name="branch_table"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：branch_table</b>
+   </div>
+   <div>
+    说明：
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>branch_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>xid</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>transaction_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>resource_group_id</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>resource_id</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>branch_type</td>
+      <td align="center">varchar</td>
+      <td align="center">8</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>status</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>client_id</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>application_data</td>
+      <td align="center">varchar</td>
+      <td align="center">2000</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">26</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>gmt_modified</td>
+      <td align="center">datetime</td>
+      <td align="center">26</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+    </tbody>
+   </table><a name="global_table"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：global_table</b>
+   </div>
+   <div>
+    说明：
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>xid</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>transaction_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>status</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>application_id</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>transaction_service_group</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>transaction_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>timeout</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>begin_time</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>application_data</td>
+      <td align="center">varchar</td>
+      <td align="center">2000</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>gmt_modified</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+    </tbody>
+   </table><a name="lock_table"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：lock_table</b>
+   </div>
+   <div>
+    说明：
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>row_key</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>xid</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>transaction_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>branch_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>resource_id</td>
+      <td align="center">varchar</td>
+      <td align="center">256</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>table_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>pk</td>
+      <td align="center">varchar</td>
+      <td align="center">36</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>gmt_create</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>gmt_modified</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <footer></footer>
+ </body>
+</html>

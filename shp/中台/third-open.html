@@ -1,0 +1,455 @@
+<html lang="zh">
+ <head></head>
+ <body style="text-align:center;">
+  ﻿
+  <title>third-open文档</title>
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style>
+  <div style="width:800px; margin:20px auto; text-align:left;">
+   <a name="index"></a>
+   <h2 style="text-align:center; line-height:50px;">third-open文档</h2>
+   <div>
+    <b>数据库名：third-open</b>
+    <br><b>文档版本：0.0.1-SNAPSHOT</b>
+    <br><b>文档描述：third-open文档生成</b>
+    <br>
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>表名</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td><a href="#lessee_program">lessee_program</a></td>
+      <td>商家小程序/公众号表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td><a href="#open_dev_config">open_dev_config</a></td>
+      <td>三方平台配置表</td>
+     </tr>
+    </tbody>
+   </table><a name="lessee_program"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：lessee_program</b>
+   </div>
+   <div>
+    说明：商家小程序/公众号表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>appid</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商户APPID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>open_appid</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">中台产品对应的APPID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>product_code</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">中台产品code</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>lessee_code</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">中台租户code</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">类型: 1-小程序 2-公众号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>auth_status</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">0: 未授权，1: 已授权</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>app_status</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">小程序/公众号状态</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>authorizer_access_refresh_token</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">刷新令牌</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>code</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业代码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>code_type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业代码类型（1：统一社会信用代码， 2：组织机构代码，3：营业执照注册号）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>legal_persona_wechat</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">法人微信</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>legal_persona_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">法人姓名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>component_phone</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">第三方联系电话</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>create_pin</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>update_pin</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">删除标识 1-有效 0-删除</td>
+     </tr>
+    </tbody>
+   </table><a name="open_dev_config"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：open_dev_config</b>
+   </div>
+   <div>
+    说明：三方平台配置表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">自增主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>product_code</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">中台产品code</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>app_id</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">产品appid；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>app_secret</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">产品secret</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>token</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">消息校验Token</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>encoding_aes_key</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">消息加解密建</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>auth_page_domain</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">授权发起页域名,带http或https</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>official_dev_domain</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">公众号开发域名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>create_pin</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>update_pin</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">删除标识 1-有效 0-删除</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <footer></footer>
+ </body>
+</html>

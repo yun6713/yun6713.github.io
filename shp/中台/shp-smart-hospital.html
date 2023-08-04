@@ -1,0 +1,2809 @@
+<html lang="zh">
+ <head></head>
+ <body style="text-align:center;">
+  ﻿
+  <title>shp-smart-hospital文档</title>
+  <style type="text/css">body {            padding-bottom: 50px        }        body, td {            font-family: verdana, fantasy;            font-size: 12px;            line-height: 150%        }        table {            width: 100%;            background-color: #ccc;            margin: 5px 0        }        td {            background-color: #fff;            padding: 3px 3px 3px 10px        }        thead td {            text-align: center;            font-weight: bold;            background-color: #eee        }        a:link, a:visited, a:active {            color: #015fb6;            text-decoration: none        }        a:hover {            color: #e33e06        }</style>
+  <div style="width:800px; margin:20px auto; text-align:left;">
+   <a name="index"></a>
+   <h2 style="text-align:center; line-height:50px;">shp-smart-hospital文档</h2>
+   <div>
+    <b>数据库名：shp-smart-hospital</b>
+    <br><b>文档版本：0.0.1-SNAPSHOT</b>
+    <br><b>文档描述：shp-smart-hospital文档生成</b>
+    <br>
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>表名</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td><a href="#banner">banner</a></td>
+      <td>医院配置表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td><a href="#booking_order">booking_order</a></td>
+      <td>挂号订单表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td><a href="#department">department</a></td>
+      <td>科室表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td><a href="#doctor">doctor</a></td>
+      <td>医生表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td><a href="#health_card">health_card</a></td>
+      <td>用户健康卡</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td><a href="#hospital">hospital</a></td>
+      <td>医院表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td><a href="#hospital_config">hospital_config</a></td>
+      <td>医院配置表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td><a href="#hospital_health_platform_info">hospital_health_platform_info</a></td>
+      <td>医院对应医保中台配置</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td><a href="#hospital_wechat_info">hospital_wechat_info</a></td>
+      <td>医院对应微信相关配置</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td><a href="#lessee_mini_program">lessee_mini_program</a></td>
+      <td>商家小程序表(测试用勿删)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td><a href="#outpatient_order">outpatient_order</a></td>
+      <td>门诊订单表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td><a href="#payment">payment</a></td>
+      <td>支付信息表</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td><a href="#relevant_patient">relevant_patient</a></td>
+      <td>病人-健康卡绑定微信</td>
+     </tr>
+    </tbody>
+   </table><a name="banner"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：banner</b>
+   </div>
+   <div>
+    说明：医院配置表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">shp医院id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">图片名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>pic_path</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">图片地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>show_type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">展示方式:12:轮播/静止</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>redirect</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">是否跳转:01:不跳转/跳转</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>redirect_path</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">跳转链接</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>sort_no</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">序号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>create_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>update_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">删除标识 01:删除/有效</td>
+     </tr>
+    </tbody>
+   </table><a name="booking_order"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：booking_order</b>
+   </div>
+   <div>
+    说明：挂号订单表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">订单主键ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>shp_patient_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">山海平患者ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>shp_hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">山海平医院ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>doctor_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">HIS医生ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>doctor_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">HIS医生名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>department_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">HIS科室ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>department_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">HIS科室名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>shp_order_no</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">山海平订单号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>order_no</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">HIS订单号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>sort_number</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">HIS号源排队号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>payment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付信息表ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>order_status</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单状态 1:待支付 2:已支付 3:已退号 4:超时取消</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>biz_status</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">就诊状态 1:待就诊 2:已就诊</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>schedule_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">排班ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>start_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">就诊开始时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>end_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">就诊结束时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>booking_cost</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">2</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">挂号费用</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>outpatient_address</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">就诊地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>visit_type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">挂号类型 见枚举</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>out_create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院下单时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>close_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单超时将要关闭时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center">订单创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>update_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">25</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+    </tbody>
+   </table><a name="department"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：department</b>
+   </div>
+   <div>
+    说明：科室表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">shp-医院id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>lessee_code</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">中台租户编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>department_code</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">中台部门code</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>introduce</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">科室介绍</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>address</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">科室地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>qr_code</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">二维码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>create_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>update_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">删除标识 01:删除/有效</td>
+     </tr>
+    </tbody>
+   </table><a name="doctor"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：doctor</b>
+   </div>
+   <div>
+    说明：医生表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">shp-医院id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>department_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">shp-科室id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>lessee_code</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">中台租户编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>department_code</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">中台部门编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>employee_code</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">中台员工编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>doctor_name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医生姓名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>pic_path</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">头像地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>technical_title</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">职称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>introduce</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医生介绍</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>trait</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医生擅长</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>create_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>update_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">删除标识 01:删除/有效</td>
+     </tr>
+    </tbody>
+   </table><a name="health_card"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：health_card</b>
+   </div>
+   <div>
+    说明：用户健康卡
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">健康卡主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>patient_name</td>
+      <td align="center">varchar</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">患者姓名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>gender</td>
+      <td align="center">varchar</td>
+      <td align="center">5</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">性别</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>ethnicity</td>
+      <td align="center">varchar</td>
+      <td align="center">25</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">民族</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>qr_code_text</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">二维码文本，根据当地卫健委要求返回静态码或动态码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>card_type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件类型</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>card_no</td>
+      <td align="center">varchar</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">证件号码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>address</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">联系地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>tel</td>
+      <td align="center">varchar</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">联系电话</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>health_card_id</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">健康卡号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>create_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>update_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">删除标识 01:删除/有效</td>
+     </tr>
+    </tbody>
+   </table><a name="hospital"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：hospital</b>
+   </div>
+   <div>
+    说明：医院表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>lessee_code</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">租户编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>name</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>address</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>pic_path</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">图片</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>introduce</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">简介</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>tel</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院电话</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>coordinates</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院坐标</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>create_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>update_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">删除标识 01:删除/有效</td>
+     </tr>
+    </tbody>
+   </table><a name="hospital_config"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：hospital_config</b>
+   </div>
+   <div>
+    说明：医院配置表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">shp医院id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>domain</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">his域名端口路径</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>adapter_class_name</td>
+      <td align="center">varchar</td>
+      <td align="center">128</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院适配器路径</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>registration_notify</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">挂号须知</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>front_config</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">C端配置</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>backend_config</td>
+      <td align="center">varchar</td>
+      <td align="center">1024</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">后台系统配置</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>create_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>update_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">删除标识 01:删除/有效</td>
+     </tr>
+    </tbody>
+   </table><a name="hospital_health_platform_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：hospital_health_platform_info</b>
+   </div>
+   <div>
+    说明：医院对应医保中台配置
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">订单主键ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>hospital_wechat_info_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院对应微信平台配置ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>org_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">定点医药机构名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>org_we_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">定点医药机构小程序/h5应用名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>org_appid</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">定点医药机构小程序/h5应用ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>org_app_secret</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">应用密钥/数字秘钥</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>org_code</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">定点医药机构编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>org_channel_crtf_code</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">机构渠道认证编码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>platform_public_key</td>
+      <td align="center">varchar</td>
+      <td align="center">200</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">平台公钥</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>channel_public_key</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">渠道公钥</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>channel_private_key</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">渠道私钥</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>reg_url</td>
+      <td align="center">varchar</td>
+      <td align="center">300</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医保中台请求地址</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>channel_application_name</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">电子凭证第三方渠道应用名称:如微信</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>online_biz_type</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">线上业务类型：04107-医保移动支付业务 04106-线上身份核 验业务</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>update_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+    </tbody>
+   </table><a name="hospital_wechat_info"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：hospital_wechat_info</b>
+   </div>
+   <div>
+    说明：医院对应微信相关配置
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">订单主键ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>shp_hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院对应平台ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>app_type</td>
+      <td align="center">tinyint</td>
+      <td align="center">3</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">0：h5应用，1：小程序</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>appid</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">微信分配的公众账号ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>sub_appid</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">子公众号id</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>mch_id</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商户号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>sub_mch_id</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">子商户号；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>city_code</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">城市码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>channel</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">渠道号（微信医保平台分配)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>app_secret</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">公众帐号appSecret</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>sub_app_secret</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">子公众帐号appSecret</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>update_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+    </tbody>
+   </table><a name="lessee_mini_program"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：lessee_mini_program</b>
+   </div>
+   <div>
+    说明：商家小程序表(测试用勿删)
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>merchant_appid</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">商户APPID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>sic_product_appid</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">中台产品AppID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>sic_lessee_id</td>
+      <td align="center">varchar</td>
+      <td align="center">32</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">中台租户ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>auth_status</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">0: 未授权，1: 已授权</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>app_status</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>authorizer_access_refresh_token</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">刷新令牌</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>update_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>create_by</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>update_by</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>code</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业代码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>code_type</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">企业代码类型（1：统一社会信用代码， 2：组织机构代码，3：营业执照注册号）</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>legal_persona_wechat</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">法人微信</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>legal_persona_name</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">法人姓名</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>component_phone</td>
+      <td align="center">varchar</td>
+      <td align="center">255</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">第三方联系电话</td>
+     </tr>
+    </tbody>
+   </table><a name="outpatient_order"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：outpatient_order</b>
+   </div>
+   <div>
+    说明：门诊订单表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">订单主键ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>patient_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">患者ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>shp_patient_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">山海平患者ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>shp_hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>doctor_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医生ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>doctor_name</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医生名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>department_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">科室ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>department_name</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">科室名称</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>shp_order_no</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">平台订单号--我们自己生成</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>order_no</td>
+      <td align="center">varchar</td>
+      <td align="center">64</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院的订单号-对外</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>order_status</td>
+      <td align="center">tinyint</td>
+      <td align="center">3</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">订单状态 1:待支付 2:已支付 3:已退款 4:已取消</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>payment_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付方式 关联支付表；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>fee_type</td>
+      <td align="center">tinyint</td>
+      <td align="center">3</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">费用类型:示例：西药，CT检查</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>fee_sum_amt</td>
+      <td align="center">decimal</td>
+      <td align="center">11</td>
+      <td align="center">2</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单总金额</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>details</td>
+      <td align="center">json</td>
+      <td align="center">1073741824</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">对应缴费明细详情：{"details":[{"name":"费用明细的名称","num":"数量","price":"物品金额（单价）"}]}</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>out_create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院下单时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>close_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单关闭时间(超时自动关闭)</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>update_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+    </tbody>
+   </table><a name="payment"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：payment</b>
+   </div>
+   <div>
+    说明：支付信息表
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">订单主键ID</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>order_no</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">his订单号—我们自己生成</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>shp_order_no</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">平台订单号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>shp_hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院ID；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>order_type</td>
+      <td align="center">tinyint</td>
+      <td align="center">3</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单类型 1：预约挂号，2:门诊缴费</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>order_status</td>
+      <td align="center">tinyint</td>
+      <td align="center">3</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">订单状态 1:待支付 2:已支付 3:已退款</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>pay_type</td>
+      <td align="center">tinyint</td>
+      <td align="center">3</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">支付类型 2:医保3:现金+医保</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>serial_no</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">流水号 结算中心流水号</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>med_trade_state</td>
+      <td align="center">varchar</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">SUCCESS—支付成功 REFUND—转入退款 PAYING—支付中 SYS_REFUNDED-支付失败 SYS_REFUNDING-支付失败，异常处理中 NOTPAY—未支付 CLOSED—已关闭 INITIAL—未绑卡</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>cash_trade_status</td>
+      <td align="center">varchar</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">SUCCESS—支付成功 REFUND—转入退款 NOTPAY—未支付 CLOSED—已关闭</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>insurance_trade_status</td>
+      <td align="center">varchar</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">PAYED—已支付 REFUND—转入退款 NOTPAY—未支付 CLOSED—已关闭</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>fee_sum_amt</td>
+      <td align="center">decimal</td>
+      <td align="center">12</td>
+      <td align="center">2</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">费用总额</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>own_pay_amt</td>
+      <td align="center">decimal</td>
+      <td align="center">12</td>
+      <td align="center">2</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">现金支付</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">15</td>
+      <td>psn_acct_pay</td>
+      <td align="center">decimal</td>
+      <td align="center">12</td>
+      <td align="center">2</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">个人账户支出</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">16</td>
+      <td>fund_pay</td>
+      <td align="center">decimal</td>
+      <td align="center">12</td>
+      <td align="center">2</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医保基金支付</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">17</td>
+      <td>err_code</td>
+      <td align="center">varchar</td>
+      <td align="center">50</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">错误代码</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">18</td>
+      <td>err_code_des</td>
+      <td align="center">varchar</td>
+      <td align="center">200</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">错误代码描述</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">19</td>
+      <td>out_create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">医院下单时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">20</td>
+      <td>pay_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">付款时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">21</td>
+      <td>create_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">22</td>
+      <td>create_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">创建人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">23</td>
+      <td>update_time</td>
+      <td align="center">timestamp</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">修改时间</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">24</td>
+      <td>update_by</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">更新人</td>
+     </tr>
+    </tbody>
+   </table><a name="relevant_patient"></a>
+   <div style="margin-top:30px;" class="table_name">
+    <a href="#index" style="float:right; margin-top:6px;">返回目录</a><b>表名：relevant_patient</b>
+   </div>
+   <div>
+    说明：病人-健康卡绑定微信
+   </div>
+   <div>
+    数据列：
+   </div>
+   <table cellspacing="1">
+    <thead>
+     <tr>
+      <td style="width:40px; ">序号</td>
+      <td>名称</td>
+      <td>数据类型</td>
+      <td>长度</td>
+      <td>小数位</td>
+      <td>允许空值</td>
+      <td>主键</td>
+      <td>默认值</td>
+      <td>说明</td>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td style="text-align:center;">1</td>
+      <td>id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">Y</td>
+      <td align="center"></td>
+      <td align="center">表自增主键</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">2</td>
+      <td>open_id</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">用户微信openid；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">3</td>
+      <td>relation</td>
+      <td align="center">int</td>
+      <td align="center">10</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">关系：0-本人，1-父母，2-子女，3-夫妻，4-亲属，5-朋友，6-其他</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">4</td>
+      <td>health_card_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">健康卡id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">5</td>
+      <td>hospital_id</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">住院id；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">6</td>
+      <td>his_patient_id</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">病人id,建档后医院返回；</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">7</td>
+      <td>default_patient</td>
+      <td align="center">bit</td>
+      <td align="center">1</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">0</td>
+      <td align="center">是否是默认就诊人</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">8</td>
+      <td>state</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">状态：1，绑定；0，解绑</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">9</td>
+      <td>create_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">10</td>
+      <td>update_time</td>
+      <td align="center">datetime</td>
+      <td align="center">19</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">CURRENT_TIMESTAMP</td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">11</td>
+      <td>create_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">12</td>
+      <td>update_pin</td>
+      <td align="center">bigint</td>
+      <td align="center">20</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center"></td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">13</td>
+      <td>yn</td>
+      <td align="center">tinyint</td>
+      <td align="center">4</td>
+      <td align="center">0</td>
+      <td align="center">N</td>
+      <td align="center">N</td>
+      <td align="center">1</td>
+      <td align="center">删除标识 0-有效 1-删除</td>
+     </tr>
+     <tr>
+      <td style="text-align:center;">14</td>
+      <td>pid</td>
+      <td align="center">varchar</td>
+      <td align="center">100</td>
+      <td align="center">0</td>
+      <td align="center">Y</td>
+      <td align="center">N</td>
+      <td align="center"></td>
+      <td align="center">未成年人建档时，监护人id</td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <footer></footer>
+ </body>
+</html>
