@@ -1,2 +1,1 @@
-sh sync.sh;
-sh commit.sh;
+sh sync.sh && sh commit.sh;
